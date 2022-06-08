@@ -1,4 +1,3 @@
-import './App.css';
 
 function Header() {
   return (
@@ -7,8 +6,11 @@ function Header() {
             <ul>
                 <li>Home</li>
                 <li>Shop</li>
+                <li>mobile</li>
+                <li>otombel</li>
+                <li>dilivery</li>
                 <li>Contact</li>
-                
+                <li>About us</li>
             </ul>
         </nav>
     </header>
