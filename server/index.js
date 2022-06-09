@@ -10,7 +10,10 @@ const db = mysql.createPool({
 });
 
 app.get('/', (req, res)=>{
-   
+   const sqlSelect = "select * from sales";
+   db.query(sqlSelect, (err, result)=>{
+       res.send(result);
+   })
 })
 
 app.listen(3001, ()=>{

@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    display:grid;
+    grid-template-columns: 50% 40% auto;
+    width: 100%;
+    height: 100%;
+}
+header div{
+    padding:1em;
+}
+footer {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    outline-width: 0in;
+    color:black;
+    background:#3667ec;
+    border: width 1.5em;
+    width: 40;
+    height: 30;
+   
+}

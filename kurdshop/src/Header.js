@@ -2,17 +2,10 @@
 function Header() {
   return (
     <header>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Shop</li>
-                <li>mobile</li>
-                <li>otombel</li>
-                <li>dilivery</li>
-                <li>Contact</li>
-                <li>About us</li>
-            </ul>
-        </nav>
+        <div id='logo'>Logo</div>
+        <div id='navigation'>Header</div>
+        <div id='user'>Login</div>
+
     </header>
   );
 }
