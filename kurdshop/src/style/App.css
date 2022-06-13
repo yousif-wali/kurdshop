@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Allan&family=Anton&family=Comfortaa:wght@300&display=swap');
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+#logo {
+    font-family:Anton;
 }
 header{
     position:sticky;
@@ -15,10 +19,17 @@ header{
 header div{
     padding:1em;
 }
-.container{
+.container-fluid{
     margin:0 auto;
+    font-family:Comfortaa;
 }
-.container span{
+.container-fluid h3{
+    font-family:Allan;
+}
+.container-fluid p{
+    font-family:Comfortaa;
+}
+.container-fluid span{
     border:1px solid black;
 }
 footer {
@@ -89,7 +100,6 @@ a[data-type=tiktok]{
 @media screen and (max-width:41em){
     footer{
         height:100px;
-        justify-content: space-between;
     }
     footer #socials{
         font-size:0.7rem;
