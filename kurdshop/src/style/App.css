@@ -4,17 +4,68 @@
     padding:0;
     box-sizing: border-box;
 }
+body{
+    overflow: hidden;
+}
 #logo {
     font-family:Anton;
+    line-height:40px;
 }
 header{
     position:sticky;
     display:grid;
-    grid-template-columns: 30% 50% auto;
+    grid-template-columns: 10% auto;
+    justify-content: space-between;
     width: 100%;
     top:0;
     height: 60px;
     z-index:10;
+}
+.nav li a[href='#login']{
+    outline:none;
+    border:none;
+}
+#navigation{
+    display:flex;
+    align-items:flex-start;
+    height:auto;
+}
+#nav{
+    transition:transform 0.5s ease-in-out;
+}
+#navigation.active{
+    position:fixed;
+    right:0;
+    background-color: rgba(17, 17, 17, 0.71);
+    backdrop-filter: blur(0.5px);
+    width:200px;
+    height:100%;
+}
+#navigation.active #menu{
+    color:red;
+}
+#nav.active{
+    position: relative;
+    transform:translateX(0);
+    border-bottom:none;
+}
+#nav.active li a{
+    width:150px;
+    margin-top:calc(100% / 3.5);
+}
+header .nav a{
+    color:#17bdb8;
+}
+#menu{
+    position:absolute;
+    right:15px;
+    transition:all 0.5s ease-in;
+    width:20px;
+    height:20px;
+    font-size:2em;
+    transition:0.3s ease-in;
+    line-height:45px;
+    display:none;
 }
 header div{
     padding:1em;
@@ -29,9 +80,21 @@ header div{
 .container-fluid p{
     font-family:Comfortaa;
 }
-.container-fluid span{
-    border:1px solid black;
+
+
+
+#sales{
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
+.carousel-inner img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
 footer {
     display:flex;
     flex-direction: row;
@@ -98,6 +161,18 @@ a[data-type=tiktok]{
     /* 010101	69C9D0  FFFFFF	EE1D52*/
 }
 @media screen and (max-width:41em){
+    #navigation{
+        position:relative;
+    }
+    #menu{
+        display:block;
+    }
+    header .nav{
+        position:absolute;
+        display:flex;
+        flex-direction:column;
+        transform:translateX(200px);
+    }
     footer{
         height:100px;
     }
