@@ -1,8 +1,21 @@
 import {images} from './Data'
-export let title = "";
-export let desc = "";
+function Carousel(props){
+  setTimeout(()=>{
+  document.querySelectorAll(".carousel-item").forEach((elem)=>{
+    elem.addEventListener("animationend", ()=>{
+          if(elem.classList.contains("active")){
+            try{ 
+                document.getElementById(props.backgroundImage).src = require("./image/"+elem.getAttribute("data-src")+".jpg");
+                document.getElementById(props.title).innerHTML = elem.getAttribute("data-title");
+                document.getElementById(props.desc).innerHTML = elem.getAttribute("data-desc"); 
+            }catch(e){
+              console.log(e.message)
+            }
+    }
+    })
 
-function Carousel(){
+    })
+  }, 500);
     return(
         <div>
             <div id="sales" className="carousel slide" data-bs-ride="carousel">
@@ -16,10 +29,8 @@ function Carousel(){
 {images.map((elem, id)=>{
     return(    
    
-    <div className={id === 0 ? "carousel-item active": "carousel-item"} key={id}>
+    <div className={id === 0 ? "carousel-item active": "carousel-item"} key={id} data-title = { elem.title} data-desc = {elem.desc} data-src = {elem.background}>
       <img src={require("./image/"+elem.src+".jpg")} alt={elem.alt} className="d-block" />
-      <span style={{display: 'none'}}>{title = elem.title}</span>
-      <span style={{display: 'none'}}>{desc = elem.desc}</span>
       </div>
     )
 
