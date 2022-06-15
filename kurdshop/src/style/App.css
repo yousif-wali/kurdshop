@@ -25,7 +25,7 @@ header{
     width: 100%;
     top:0;
     height: var(--header-height);
-    z-index:10;
+    z-index:11;
 }
 .nav li a[href='#login']{
     outline:none;
@@ -35,9 +35,11 @@ header{
     display:flex;
     align-items:flex-start;
     height:auto;
+    z-index:10;
 }
 #nav{
     transition:transform 0.5s ease-in-out;
+    z-index:5;
 }
 #navigation.active{
     position:fixed;
@@ -45,7 +47,8 @@ header{
     background-color: rgba(17, 17, 17, 0.71);
     backdrop-filter: blur(0.5px);
     width:200px;
-    height:100%;
+    height:calc(100vh - var(--footer-height));
+    z-index:5;
 }
 #navigation.active #menu{
     color:red;
@@ -209,18 +212,20 @@ a[data-type=tiktok]{
 @media screen and (max-width:41em){
     #navigation{
         position:relative;
+       
     }
     #menu{
         display:block;
     }
+
     header .nav{
         position:absolute;
         display:flex;
         flex-direction:column;
         transform:translateX(200px);
     }
-    footer{
-        height:100px;
+    :root{
+        --footer-height:100px;
     }
     footer #socials{
         font-size:0.7rem;
