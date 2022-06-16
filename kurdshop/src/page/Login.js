@@ -1,7 +1,11 @@
 export default function Login(){
     return (
       <div className="container-fluid row">
-        Welcome to Login
+       <form>
+        <input />
+        <input />
+        <input type="submit" value="Login"/>
+       </form>
       </div>
       );
 }

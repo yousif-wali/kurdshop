@@ -13,7 +13,7 @@ function Header() {
  }
   return (
     <header>
-        <div id='logo'> Kurd Mega</div> 
+        <div id='logo'> <img src={require("./image/logo/logo2.png")} alt="logo"/></div> 
         <div id='navigation'>
           <span id="menu" onClick={menu}>{bars}</span> 
           <nav>

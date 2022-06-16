@@ -7,7 +7,7 @@ export const images = [
         background : "land2"
     },
     {
-        title : 'Vehicle',
+        title : 'Car',
         desc : 'Good, Cheap, Fancy cars that\'s all man can ask for',
         src : "vehicle",
         alt : "vehicle",
