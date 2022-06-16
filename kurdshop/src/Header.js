@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 function Header() {
   let bars = '≡'
   let close = 'x';
@@ -13,17 +13,18 @@ function Header() {
     <header>
         <div id='logo'>Kurdshop</div>
         <div id='navigation'>
-          <span id="menu" onClick={menu}>{bars}</span>
-          <ul id="nav" className="nav nav-tabs">
-          <li className="nav-item"><a className="nav-link active" data-bs-toggle="tab" href="#home">Home</a></li>
-          <li className="nav-item"><a className="nav-link" data-bs-toggle="tab" href="#shop">Shop</a></li>
+          <span id="menu" onClick={menu}>{bars}</span> 
+          <nav>
+          <ul id="nav" className="nav nav-tabs">                
+          <li className="nav-item"><a className="nav-link active" data-bs-toggle="tab" href="/">Home</a></li>
+          <li className="nav-item"><a className="nav-link" data-bs-toggle="tab" href="/page/Shop">Shop</a></li>
           <li className="nav-item"><a className="nav-link" data-bs-toggle="tab" href="#mobile">Mobile</a></li>
           <li className="nav-item"><a className="nav-link" data-bs-toggle="tab" href="#religion">Religion</a></li>
           <li className="nav-item"><a className="nav-link" data-bs-toggle="tab" href="#reklam">Reklam</a></li>
-          <li className="nav-item"><a className="nav-link" href="#login">Login</a></li>
+          <li className="nav-item"><a className="nav-link" href="#login">Login</a></li>         
           </ul>   
+          </nav>
         </div>
-
     </header>
   );
 }
