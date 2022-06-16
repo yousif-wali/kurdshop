@@ -5,7 +5,7 @@ function App() {
     <div className="container-fluid row">
       <div id = "background-image">
         <div>
-          <img id="coverImage" src={require("./image/"+images[0].background+".jpg")}/>
+          <img id="coverImage" src={require("./image/"+images[0].background+".jpg")} alt="Background"/>
         </div>
       </div>
       <span className="col-lg-5 offset-0 col-md-5 col-sm-12" style={{marginTop: '9em'}}>

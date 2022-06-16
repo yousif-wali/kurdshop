@@ -1,6 +1,6 @@
 import App from './App';
 import Shop from "./page/Shop"
-import { BrowserRouter , Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 
 export default function Routing(){
     return(
