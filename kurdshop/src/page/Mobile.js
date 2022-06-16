@@ -1,7 +1,7 @@
-export default function Shop(){
+export default function Mobile(){
     return (
       <div className="container-fluid row">
-        Welcome to Shop
+        Welcome to Mobile
       </div>
       );
 }

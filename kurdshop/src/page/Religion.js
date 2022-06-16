@@ -1,7 +1,7 @@
-export default function Shop(){
+export default function Religion(){
     return (
       <div className="container-fluid row">
-        Welcome to Shop
+        Welcome to Religion
       </div>
       );
 }

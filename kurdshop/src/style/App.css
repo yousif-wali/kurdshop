@@ -93,6 +93,8 @@ header div{
     padding-bottom:calc(var(--footer-height) + 5px);
     overflow:hidden;
     font-family:Comfortaa;
+}
+.app{
     color:#ffffff;
 }
 .container-fluid h3{

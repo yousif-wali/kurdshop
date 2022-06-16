@@ -2,7 +2,7 @@ import Carousel from './Carousel'
 import {images} from './Data'
 function App() {
   return (
-    <div className="container-fluid row">
+    <div className="container-fluid app row">
       <div id = "background-image">
         <div>
           <img id="coverImage" src={require("./image/"+images[0].background+".jpg")} alt="Background"/>

@@ -1,7 +1,7 @@
-export default function Shop(){
+export default function Login(){
     return (
       <div className="container-fluid row">
-        Welcome to Shop
+        Welcome to Login
       </div>
       );
 }
