@@ -1,5 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Joan&display=swap');
 /*          SHOP            */
 /*          LOGIN           */
+.account{
+    height:calc(100vh + 75px);
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.account form{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    background-color:hsl(0 100% 0% / 0.8);
+    backdrop-filter: blur(0.5px);
+    padding:3em;
+    border-radius:10px;
+    box-shadow:0 0 15px 10px grey;
+    overflow:hidden;
+}
+.account p, .account small{
+    color:white;
+}
+.account p {
+    text-shadow:-1.5px 0 #EE1D52, 1.5px 0 #69C9D0;
+}
+.account form div{
+    display:grid;
+    grid-template-columns: auto auto;
+    margin:0 40px
+}
+.account form div:first-child{
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+}
+.account form div:first-child > *{
+    margin:40px auto;
+}
+.account form div:last-child> *{
+    margin:8px 5px;
+    line-height:30px;
+}
+.account form img{
+    animation: rotateImage 5s ease infinite;
+}
+.account form span{
+    position: relative;
+    isolation: isolate;
+}
+.account form span label{
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translate(5%,-50%);
+    transition:all 0.5s ease-in-out;
+    line-height:22px;
+    font-family:Dosis
+}
+label[for="dob"]{
+    display:none;
+}
+label[for="dob"].active{
+    display:block;
+}
+.account form input{
+    padding-top:0.5em;
+    border-radius:5px;
+}
+.account form span input:focus + label, label.active{
+    display:block;
+    transform:translate(5px, -30px)!important;
+    background-color: white;
+    border-left:1.5px solid #69C9D0;
+    border-right:1.5px solid #69C9D0;
+    border-radius:2px;
+    padding:0 0.5em;
+}
+/*     #11a519 for success    */
+.account form span input:focus, input.active{
+    border:2px solid #69C9D0;
+    outline:none;
+    text-indent:5px;
+}
+.account i{
+    isolation: isolate;
+    position:absolute;
+    width:150px;
+    height:2px;
+    transform:rotate(-45deg) scale(2.5) translate(-10%, -2200%);
+}
+@keyframes rotateImage{
+100%{
+    transform: rotate(360deg);
+}
+
+}
+@media screen and (max-width:41em){
+    .account form{
+        flex-direction:column;
+    }
+}
 /*          MOBILE          */
 /*          RELIGION        */
 /*          REKLAM          */
