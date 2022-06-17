@@ -1,7 +1,20 @@
 import './page.css'
+import {useState} from 'react'
 export default function Login(){
+    const [name, setName] = useState("");
+    const [pwd, setPwd] = useState("");
   function change(elem){
     let id = elem.target.getAttribute("id")
+    let input = elem.target.value;
+    switch(elem.target.getAttribute("data-input")){
+        case "name":
+           setName(input);
+            break;
+        case "password":
+           setPwd(input);
+            break;
+            default:
+    }
     if(elem.target.value.length > 0){
         document.querySelector('label[for='+id+']').classList.add("active");
         elem.target.classList.add("active")
@@ -28,7 +41,7 @@ function removeAttr(elem){
         <label htmlFor="username">User/Email/Phone</label>
         </span>
         <span>
-        <input id="password" required type="password" readOnly onChange={change} onFocus={removeAttr}/>
+        <input id="password" required type="password" readOnly onChange={change} onFocus={removeAttr} data-input="password"/>
         <label htmlFor="password">Password</label>
         </span>
         <button>Login</button>

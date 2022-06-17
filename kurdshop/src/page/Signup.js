@@ -24,16 +24,16 @@ export default function Signup(){
             </div>
             <div>
             <span>
-            <input id="firstname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
-            <label htmlFor="firstname">First Name</label>
+            <input id="fullname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
+            <label htmlFor="fullname">Full Name</label>
             </span>
             <span>
             <input id="email" required type="email" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="email">Email</label>
             </span>
             <span>
-            <input id="lastname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
-            <label htmlFor="lastname">Last Name</label>
+            <input id="username" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
+            <label htmlFor="username">User Name</label>
             </span>
             <span>
             <input id="password" required  type="password" readOnly onChange={change} onFocus={removeAttr}/>

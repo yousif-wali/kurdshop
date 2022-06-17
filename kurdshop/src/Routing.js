@@ -1,7 +1,7 @@
 import App from './App';
 import Shop from "./page/Shop"
 import Mobile from './page/Mobile'
-import Religion from './page/Religion'
+import Delivery from './page/Delivery'
 import Reklam from './page/Reklam'
 import Login from './page/Login'
 import Signup from './page/Signup'
@@ -15,7 +15,7 @@ export default function Routing(){
         <Route exact path="/" element={<App />}/>
         <Route path="/page/Shop" element={<Shop/>}/>
         <Route path="/page/Mobile" element={<Mobile/>}/>
-        <Route path="/page/Religion" element={<Religion/>}/>
+        <Route path="/page/Delivery" element={<Delivery/>}/>
         <Route path="/page/Cloud" element={<Cloud/>}/>
         <Route path="/page/Reklam" element={<Reklam/>}/>
         <Route path="/page/Login" element={<Login/>}/>
