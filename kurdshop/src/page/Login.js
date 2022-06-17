@@ -29,11 +29,11 @@ function removeAttr(elem){
 }
     return (
       <div className="account">
-       <form>
+       <form style={{border: "2px solid cyan"}}>
         <div>
         <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
         <p><u><b>With Us</b></u> Feel Secured</p>
-        <i style={{backgroundColor: "green"}}></i>
+        <i style={{backgroundColor: "cyan"}}></i>
         </div>
         <div>
         <span>

@@ -87,7 +87,7 @@ label[for="dob"].active{
     isolation: isolate;
     position:absolute;
     width:150px;
-    height:2px;
+    height:1px;
     transform:rotate(-45deg) scale(2.5) translate(-10%, -2200%);
 }
 @keyframes rotateImage{

@@ -16,7 +16,7 @@ export default function Signup(){
     }
     return (
         <div className="account">
-            <form>
+            <form style={{border: "2px solid orange"}}>
             <div>
             <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
             <p><u><b>With Us</b></u> Feel Secured.</p>
