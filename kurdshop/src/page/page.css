@@ -72,13 +72,14 @@ label[for="dob"].active{
     display:block;
     transform:translate(5px, -30px)!important;
     background-color: white;
-    border-left:1.5px solid #11a519;
-    border-right:1.5px solid #11a519;
+    border-left:1.5px solid #69C9D0;
+    border-right:1.5px solid #69C9D0;
     border-radius:2px;
     padding:0 0.5em;
 }
+/*     #11a519 for success    */
 .account form span input:focus, input.active{
-    border:2px solid #11a519;
+    border:2px solid #69C9D0;
     outline:none;
     text-indent:5px;
 }

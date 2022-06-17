@@ -51,7 +51,7 @@ export default function Signup(){
             <input id="dob" type="date" required readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="dob">Date of birth</label>
             </span>
-            <input type="submit" value="Signup"/>
+            <button>Sign up</button>
             <small><a href="#login" onClick={(e)=>{e.preventDefault(); window.location = "Login"}}>Login</a> if you have an Account.</small>
             </div>
             </form>

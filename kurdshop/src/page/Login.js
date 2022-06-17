@@ -24,14 +24,14 @@ function removeAttr(elem){
         </div>
         <div>
         <span>
-        <input id="username" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
+        <input id="username" required type="text" readOnly onChange={change} onFocus={removeAttr} data-input="name"/>
         <label htmlFor="username">User/Email/Phone</label>
         </span>
         <span>
         <input id="password" required type="password" readOnly onChange={change} onFocus={removeAttr}/>
         <label htmlFor="password">Password</label>
         </span>
-        <input type="submit" value="Login"/>
+        <button>Login</button>
         <small>Don't have an account?<a href="#singup" onClick={(e)=>{e.preventDefault(); window.location = "Signup"}}>Create an Account.</a></small>
         </div>
        </form>
