@@ -20,14 +20,15 @@ function removeAttr(elem){
         <div>
         <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
         <p><u><b>With Us</b></u> Feel Secured</p>
+        <i style={{backgroundColor: "green"}}></i>
         </div>
         <div>
         <span>
-        <input id="username" readOnly onChange={change} onFocus={removeAttr}/>
+        <input id="username" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
         <label htmlFor="username">User/Email/Phone</label>
         </span>
         <span>
-        <input id="password" readOnly onChange={change} onFocus={removeAttr}/>
+        <input id="password" required type="password" readOnly onChange={change} onFocus={removeAttr}/>
         <label htmlFor="password">Password</label>
         </span>
         <input type="submit" value="Login"/>

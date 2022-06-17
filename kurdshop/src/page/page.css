@@ -18,12 +18,13 @@
     padding:3em;
     border-radius:10px;
     box-shadow:0 0 15px 10px grey;
+    overflow:hidden;
 }
 .account p, .account small{
     color:white;
 }
 .account p {
-    text-shadow:-1.5px 0 hotpink, 1.5px 0 cyan;
+    text-shadow:-1.5px 0 #EE1D52, 1.5px 0 #69C9D0;
 }
 .account form div{
     display:grid;
@@ -53,21 +54,40 @@
     left:0;
     top:50%;
     transform:translate(5%,-50%);
-    transition:transform 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
     line-height:22px;
     font-family:Dosis
 }
+label[for="dob"]{
+    display:none;
+}
+label[for="dob"].active{
+    display:block;
+}
+.account form input{
+    padding-top:0.5em;
+    border-radius:5px;
+}
 .account form span input:focus + label, label.active{
+    display:block;
     transform:translate(5px, -30px)!important;
     background-color: white;
     border-left:1.5px solid #11a519;
     border-right:1.5px solid #11a519;
+    border-radius:2px;
     padding:0 0.5em;
 }
 .account form span input:focus, input.active{
     border:2px solid #11a519;
     outline:none;
     text-indent:5px;
+}
+.account i{
+    isolation: isolate;
+    position:absolute;
+    width:150px;
+    height:2px;
+    transform:rotate(-45deg) scale(2.5) translate(-10%, -2200%);
 }
 @keyframes rotateImage{
 100%{

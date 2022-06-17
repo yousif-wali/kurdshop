@@ -20,34 +20,35 @@ export default function Signup(){
             <div>
             <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
             <p><u><b>With Us</b></u> Feel Secured.</p>
+            <i style={{backgroundColor: "orange"}}></i>
             </div>
             <div>
             <span>
-            <input id="firstname" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="firstname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="firstname">First Name</label>
             </span>
             <span>
-            <input id="lastname" readOnly onChange={change} onFocus={removeAttr}/>
-            <label htmlFor="lastname">Last Name</label>
-            </span>
-            <span>
-            <input id="email" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="email" required type="email" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="email">Email</label>
             </span>
             <span>
-            <input id="password" type="password" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="lastname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
+            <label htmlFor="lastname">Last Name</label>
+            </span>
+            <span>
+            <input id="password" required  type="password" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="password">Password</label>
             </span>
             <span>
-            <input id="confirm-password" readOnly onChange={change} onFocus={removeAttr}/>
-            <label htmlFor="confirm-password">Confirm Password</label>
-            </span>
-            <span>
-            <input id="phone" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="phone" type="tel" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="phone">Phone</label>
             </span>
             <span>
-            <input id="dob" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="confirm-password" required type="password" readOnly onChange={change} onFocus={removeAttr}/>
+            <label htmlFor="confirm-password">Confirm Password</label>
+            </span>
+            <span>
+            <input id="dob" type="date" required readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="dob">Date of birth</label>
             </span>
             <input type="submit" value="Signup"/>
