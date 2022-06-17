@@ -1,7 +1,7 @@
 export const images = [
     {
-        title : 'Land',
-        desc : 'This is a good place to live in',
+        title : 'Zawi',
+        desc : 'Bashtrin zawi',
         src : "land",
         alt : "Land",
         background : "land2"
