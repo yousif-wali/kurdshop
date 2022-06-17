@@ -222,6 +222,11 @@ a[data-type=tiktok]{
         opacity:1
     }
 }
+@media screen and (max-width:900px){
+    .container-fluid{
+        margin-top:calc(var(--header-height) + 40px)
+    }
+}
 @media screen and (max-width:41em){
     #navigation{
         position:relative;

@@ -9,11 +9,14 @@ function Header() {
 
  }
  function keepActiveClass(string){
+  if(string === "Login"){
+    return window.location.href.includes(string) || window.location.href.includes("Signup") ? "nav-link active": "nav-link"
+  }
   return window.location.href.endsWith(string) ? "nav-link active": "nav-link"
  }
   return (
     <header>
-        <div id='logo'> <img src={require("./image/logo/logo2.png")} alt="logo"/></div> 
+        <div id='logo'> <img src={require("./image/logo/logo2.png")} alt="logo" draggable="false"/></div> 
         <div id='navigation'>
           <span id="menu" onClick={menu}>{bars}</span> 
           <nav>
