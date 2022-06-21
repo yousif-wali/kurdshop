@@ -74,7 +74,6 @@ label[for="dob"].active{
     background-color: white;
     border-left:1.5px solid #69C9D0;
     border-right:1.5px solid #69C9D0;
-    border-radius:2px;
     padding:0 0.5em;
 }
 /*     #11a519 for success    */
@@ -83,12 +82,81 @@ label[for="dob"].active{
     outline:none;
     text-indent:5px;
 }
+.account form.err{
+    border-color:#ff0000!important;
+}
+form.err i{
+    background-color:#ff0000!important;
+}
+.account form.complete{
+    border-color:#11a519!important;
+}
+form.complete i{
+    background-color:#11a519!important;
+}
 .account i{
     isolation: isolate;
     position:absolute;
     width:150px;
     height:1px;
     transform:rotate(-45deg) scale(2.5) translate(-10%, -2200%);
+}
+.account input.err{
+    border:2px solid #ff0000!important;
+}
+.account input.err + label.active{
+    border-left:1.5px solid #ff0000!important;
+    border-right:1.5px solid #ff0000!important;
+}
+.account input.err:focus{
+    border:2px solid #69C9D0;
+}
+.account input.err:focus + label.active{
+    border-left:1.5px solid #69C9D0;
+    border-right:1.5px solid #69C9D0;
+}
+
+
+.account input.complete{
+    border:2px solid #11a519!important;
+}
+.account input.complete + label.active{
+    border-left:1.5px solid #11a519!important;
+    border-right:1.5px solid #11a519!important;
+}
+.account input.complete:focus{
+    border:2px solid #69C9D0;
+}
+.account input.complete:focus + label.active{
+    border-left:1.5px solid #69C9D0;
+    border-right:1.5px solid #69C9D0;
+}
+.account input[type=date]{
+    width:100%;
+}
+
+dialog{
+display:none;
+position: relative;
+grid-column-start:1;
+grid-column-end:3;
+width:95%;
+padding: 0 1em;
+}
+dialog span{
+    display:flex;
+    position: absolute !important;;
+    color:white;
+    top:-0.5em;
+    right:-0.5em;
+    transform: scale(1.08);
+    height:20px;
+    justify-content: center;
+    align-items: center;
+    width:20px;
+    cursor:pointer;
+    border-radius:5px;
+    background-color:red
 }
 @keyframes rotateImage{
 100%{
@@ -99,6 +167,9 @@ label[for="dob"].active{
 @media screen and (max-width:41em){
     .account form{
         flex-direction:column;
+    }
+    i{
+        height:2px!important;
     }
 }
 /*          MOBILE          */
