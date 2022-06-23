@@ -1,11 +1,23 @@
 import './page.css'
+import axios from 'axios'
+import {useState} from "react"
+import IntlTelInput from "react-intl-tel-input-v2"
 export default function Signup(){
+    const [fullname, setFullname] = useState("")
+
+    function resetCredentials(){
+        return ""
+    }
+
     let message = ``;
     let validPassword, confirmPassword, validUserName, errMessage = false;
     function change(elem){
         elem = elem.target;
         let pwd = document.querySelector("input[data-input=password]").value
         switch(elem.getAttribute("data-input")){
+            case "fullname":
+                setFullname(elem.value);
+                break;
             case "password":
             if(elem.value.length < 8){ 
                 elem.classList.add("err")
@@ -20,7 +32,7 @@ export default function Signup(){
             }
                 break;
             case "confirm-password":          
-                if(elem.value != pwd){ 
+                if(elem.value !== pwd){ 
                     elem.classList.add("err")
                     confirmPassword = false
                     errMessage = true
@@ -34,7 +46,7 @@ export default function Signup(){
                 }
                 break;
             case "username":
-                if(elem.value.length < 15){ 
+                if(elem.value.length < 5){ 
                     elem.classList.add("err")
                     validUserName = false
                     errMessage = true
@@ -47,6 +59,8 @@ export default function Signup(){
                     document.querySelector("form").classList.add("err")             
                 }
                 break;
+                default:
+                    resetCredentials();
         }
         let id = elem.getAttribute("id")
         if(elem.value.length > 0){
@@ -85,9 +99,14 @@ export default function Signup(){
     function closeDialog(elem){
         elem.target.parentNode.style.display = "none"
     }
+    const submit = async e =>{
+        e.preventDefault();
+        await axios.post("http://localhost:3001/api/register", {fullname});
+    }
+    let phone = document.getElementById("phone");
     return (
         <div className="account">
-            <form style={{border: "2px solid orange"}}>
+            <form style={{border: "2px solid orange"}} onSubmit={submit}>
             <div>
             <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
             <p><u><b>With Us</b></u> Feel Secured.</p>
@@ -96,7 +115,7 @@ export default function Signup(){
             <div>
             <dialog open id="dialog"><code>{message}</code> <span onClick={closeDialog}>&times;</span></dialog>
             <span>
-            <input id="fullname" required type="text" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="fullname" required type="text" readOnly onChange={change} onFocus={removeAttr} data-input="fullname"/>
             <label htmlFor="fullname">Full Name</label>
             </span>
             <span>
@@ -112,7 +131,7 @@ export default function Signup(){
             <label htmlFor="password">Password</label>
             </span>
             <span>
-            <input id="phone" type="tel" require pattern="^\d{3}-\d{3}-\d{4}$" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="phone" type="tel" required pattern="^\d{3}-\d{3}-\d{4}$" readOnly onChange={change} onFocus={removeAttr}/>
             <label htmlFor="phone">Phone</label>
             </span>
             <span>
@@ -127,6 +146,7 @@ export default function Signup(){
             <small><a href="#login" onClick={(e)=>{e.preventDefault(); window.location = "Login"}}>Login</a> if you have an Account.</small>
             </div>
             </form>
+            
         </div>
     )
 }

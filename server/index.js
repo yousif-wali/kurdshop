@@ -23,6 +23,13 @@ app.get('/saleposts/log',cors(corsOption), async (req, res)=>{
    })
 })
 
+app.get('/api/register', cors(corsOption), async (req, res)=>{
+    const insert = `insert into sales (username) values ${req}`
+    db.query(insert, (err, result)=>{
+        res.send(result)
+    })
+})
+
 app.listen(3001, ()=>{
     console.log("running")
 });

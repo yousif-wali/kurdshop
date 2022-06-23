@@ -3,6 +3,7 @@ import {useState} from 'react'
 export default function Login(){
     const [name, setName] = useState("");
     const [pwd, setPwd] = useState("");
+    console.log(name, pwd);
   function change(elem){
     let id = elem.target.getAttribute("id")
     let input = elem.target.value;
