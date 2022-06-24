@@ -4,7 +4,7 @@ import {useState} from "react"
 import IntlTelInput from "react-intl-tel-input-v2"
 export default function Signup(){
     const [fullname, setFullname] = useState("")
-
+    
     function resetCredentials(){
         return ""
     }

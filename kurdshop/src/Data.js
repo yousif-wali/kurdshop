@@ -1,14 +1,15 @@
 export const images = [
     {
-        title : 'Zawi',
-        desc : 'Bashtrin zawi',
+        title : 'زەوی',
+        desc : 'لۆ رەکلام کردنی زەوی تکایە لە بەشی ئەپلۆد زانیاری تەواو دابنێ',
         src : "land",
         alt : "Land",
         background : "land2"
     },
     {
-        title : 'Car',
-        desc : 'Good, Cheap, Fancy cars that\'s all man can ask for',
+        title : 'ئۆتۆمبێل',
+        desc : 'لۆ کرین و فرۆشتنی ئۆتۆمبێل تکایە زانیاری دروست دابنێ ',
+        
         src : "vehicle",
         alt : "vehicle",
         background : "vehicle2"
