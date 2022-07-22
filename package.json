@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "jquery": "^3.6.0"
+    "axios": "^0.27.2",
+    "intl-tel-input": "^17.0.16",
+    "jquery": "^3.6.0",
+    "react-intl-tel-input-v2": "^1.0.8"
   }
 }

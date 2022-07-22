@@ -29,6 +29,7 @@ function Header() {
           <li className="nav-item"><a className={keepActiveClass("Delivery")} data-bs-toggle="tab" href="#delivery" onClick={(e)=>{e.preventDefault();window.location="/page/Delivery"}}>Delivery</a></li>
           <li className="nav-item"><a className={keepActiveClass("Cloud")} data-bs-toggle="tab" href="#uploud" onClick={(e)=>{e.preventDefault();window.location="/page/Cloud"}}>Cloud </a></li>
           <li className="nav-item"><a className={keepActiveClass("Reklam")} data-bs-toggle="tab" href="#reklam" onClick={(e)=>{e.preventDefault();window.location="/page/Reklam"}}>Reklam</a></li>
+          
           {(user.email === "")? (
             <li className="nav-item"><a className={keepActiveClass("Login")} data-bs-toggle="tab" href="#login" onClick={(e)=>{e.preventDefault();window.location="/page/Login"}}>Login</a></li>       
           ):(

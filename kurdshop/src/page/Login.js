@@ -23,8 +23,8 @@ export default function Login(){
         document.querySelector('label[for='+id+']').classList.remove("active");
         elem.target.classList.remove("active")
         elem.target.setAttribute("readonly", "");
-    }
-}
+  }}
+
 function removeAttr(elem){
     elem.target.removeAttribute("readonly")
 }
