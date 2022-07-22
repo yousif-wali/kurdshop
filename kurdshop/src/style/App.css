@@ -7,19 +7,17 @@
 :root{
     --header-height: 60px;
     --footer-height: 75px;
+    --ul-dropdown-header-width: 100px;
 }
 body{
     overflow: hidden;
 }
 #logo {
-    font-family:Anton;
-    line-height:40px;
     position: relative;
     overflow: hidden;
 }
 #logo img{
     height:100%;
-    width:100%;
     object-fit:cover;
 }
 header{
@@ -29,9 +27,10 @@ header{
     display:grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     top:0;
-    height: var(--header-height);
+    min-height: var(--header-height);
     z-index:15;
 }
 .nav li a[href='#login']{
@@ -53,6 +52,7 @@ header{
     margin:0 auto;
     justify-content: center;
     right:0;
+    top:0;
     background-color: rgba(17, 17, 17, 0.91);
     backdrop-filter: blur(0.5px);
     width:100%;
@@ -82,18 +82,50 @@ header .nav a{
 }
 #menu{
     position:absolute;
-    right:15px;
+    inset:auto 20px auto auto;
     transition:all 0.5s ease-in;
     width:20px;
     height:20px;
     font-size:2em;
-    transition:0.3s ease-in;
-    line-height:45px;
     display:none;
     cursor:pointer;
+    transform:translateY(-20px)
 }
 header div{
-    padding:1em;
+    position: relative;
+    width:max-content;
+    height: var(--header-height);
+}
+header li ul{
+    background-color:hsl(0 100% 0% / 0.8);
+    padding:0.5em 1em;
+    position: absolute;
+    border-radius:5px;
+    max-width:var(--ul-dropdown-header-width);
+    display:none;
+}
+header li:hover ul{
+    display:block;
+}
+header li:hover li ul{
+    display:none;
+}
+header li li:hover ul{
+    display:block;
+}
+header li li{
+    display:flex;
+    color:#17bdb8;
+    text-align:left;
+    padding: 0.2em 0.9em 0.2em 0.3em;
+    margin-top:3px;
+    cursor:pointer;
+    border:1px solid white;
+    border-radius:4px;
+}
+header li li ul{
+    position:absolute;
+    left:calc(var(--ul-dropdown-header-width) - 10px);
 }
 .container-fluid{
     position:absolute;
