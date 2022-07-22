@@ -1,9 +1,13 @@
 import './page.css'
 import axios from 'axios'
 import {useState} from "react"
-import IntlTelInput from "react-intl-tel-input-v2"
 export default function Signup(){
     const [fullname, setFullname] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [dob, setDob] = useState("")
     
     function resetCredentials(){
         return ""
@@ -19,6 +23,7 @@ export default function Signup(){
                 setFullname(elem.value);
                 break;
             case "password":
+                setPassword(elem.value);
             if(elem.value.length < 8){ 
                 elem.classList.add("err")
                 validPassword = false
@@ -46,6 +51,7 @@ export default function Signup(){
                 }
                 break;
             case "username":
+                setUsername(elem.value)
                 if(elem.value.length < 5){ 
                     elem.classList.add("err")
                     validUserName = false
@@ -58,6 +64,15 @@ export default function Signup(){
                     elem.classList.add("complete")
                     document.querySelector("form").classList.add("err")             
                 }
+                break;
+            case "email":
+                setEmail(elem.value);
+                break;
+            case "phone":
+                setPhone(elem.value);
+                break;
+            case "dob":
+                setDob(elem.value);
                 break;
                 default:
                     resetCredentials();
@@ -101,9 +116,8 @@ export default function Signup(){
     }
     const submit = async e =>{
         e.preventDefault();
-        await axios.post("http://localhost:3001/api/register", {fullname});
+        await axios.post("http://localhost:3001/api/register", {name: fullname, pwd: password, username: username, email: email, phone: phone, dob: dob});
     }
-    let phone = document.getElementById("phone");
     return (
         <div className="account">
             <form style={{border: "2px solid orange"}} onSubmit={submit}>
@@ -119,7 +133,7 @@ export default function Signup(){
             <label htmlFor="fullname">Full Name</label>
             </span>
             <span>
-            <input id="email" required type="email" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="email" required type="email" readOnly onChange={change} onFocus={removeAttr} data-input="email"/>
             <label htmlFor="email">Email</label>
             </span>
             <span>
@@ -131,7 +145,7 @@ export default function Signup(){
             <label htmlFor="password">Password</label>
             </span>
             <span>
-            <input id="phone" type="tel" required pattern="^\d{3}-\d{3}-\d{4}$" readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="phone" type="tel" required pattern="^\d{3}-\d{3}-\d{4}$" readOnly onChange={change} onFocus={removeAttr} data-input="phone"/>
             <label htmlFor="phone">Phone</label>
             </span>
             <span>
@@ -139,7 +153,7 @@ export default function Signup(){
             <label htmlFor="confirm-password">Confirm Password</label>
             </span>
             <span>
-            <input id="dob" type="date" required readOnly onChange={change} onFocus={removeAttr}/>
+            <input id="dob" type="date" required readOnly onChange={change} onFocus={removeAttr} data-input="dob"/>
             <label htmlFor="dob">Date of birth</label>
             </span>
             <button>Sign up</button>

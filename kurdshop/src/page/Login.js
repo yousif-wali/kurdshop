@@ -1,9 +1,9 @@
 import './page.css'
 import {useState} from 'react'
+import axios from 'axios';
 export default function Login(){
     const [name, setName] = useState("");
     const [pwd, setPwd] = useState("");
-    console.log(name, pwd);
   function change(elem){
     let id = elem.target.getAttribute("id")
     let input = elem.target.value;
@@ -28,9 +28,14 @@ export default function Login(){
 function removeAttr(elem){
     elem.target.removeAttribute("readonly")
 }
+const userLogin = e=>{
+    e.preventDefault();
+    axios.get("http://localhost:80/kurdshop_api/test.php", {data:{username:name, pwd:pwd}}).then(res=>{console.log(res)})
+   // fetch(`http://localhost:80/kurdshop_api/test.php?type=login&username=${name}&pwd=${pwd}`).then(res => res.json())
+}
     return (
       <div className="account">
-       <form style={{border: "2px solid cyan"}}>
+       <form style={{border: "2px solid cyan"}} onSubmit={userLogin}>
         <div>
         <img src={require("./../image/logo/logo.png")} alt="logo" draggable="false"/>
         <p><u><b>With Us</b></u> Feel Secured</p>
