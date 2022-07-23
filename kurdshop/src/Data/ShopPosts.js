@@ -1,23 +1,21 @@
 import React, {useState, useEffect} from 'react';
 export default function ShopPosts(){
-    const [data, setData] = useState([]);
-    async function collectingData(){
-        fetch("http://localhost:3001/saleposts/log")
-        .then(response => response.json())
-        .then(data => setData(data));
-    }
-    useEffect(()=>{
-        collectingData();
-        setInterval(()=>{
-        collectingData();
-    }, 3000);
-    }, []);
+    // const [data, setData] = useState([]);
+    // async function collectingData(){
+    //     fetch("http://localhost:3001/saleposts/log")
+    //     .then(response => response.json())
+    //     .then(data => setData(data));
+    // }
+    // useEffect(()=>{
+    //     collectingData();
+    //     setInterval(()=>{
+    //     collectingData();
+    // }, 3000);
+    // }, []);
     return(
         <div>
         <ul>
-          {data.map((el, id) => (
-            <li key={id}>{el.likes}</li>
-          ))}
+         
         </ul>
       </div>
     )

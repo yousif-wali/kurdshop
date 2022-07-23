@@ -30,7 +30,7 @@ function removeAttr(elem){
 }
 const userLogin = e=>{
     e.preventDefault();
-    axios.get("http://localhost:80/kurdshop_api/test.php", {data:{username:name, pwd:pwd}}).then(res=>{console.log(res)})
+    axios.post(`http://localhost:80/kurdshop_api/login.php?name=${name}&pwd=${pwd}`).then(res=>{console.log(res)})
    // fetch(`http://localhost:80/kurdshop_api/test.php?type=login&username=${name}&pwd=${pwd}`).then(res => res.json())
 }
     return (

@@ -101,7 +101,8 @@ header li ul{
     padding:0.5em 1em;
     position: absolute;
     border-radius:5px;
-    max-width:var(--ul-dropdown-header-width);
+    max-width:max-content;
+    width:max-content;
     display:none;
 }
 header li:hover ul{
@@ -113,6 +114,9 @@ header li:hover li ul{
 header li li:hover ul{
     display:block;
 }
+header li:hover{
+    background-image: linear-gradient(45deg, transparent, #f25d39)
+}
 header li li{
     display:flex;
     color:#17bdb8;
@@ -122,6 +126,7 @@ header li li{
     cursor:pointer;
     border:1px solid white;
     border-radius:4px;
+    width:100%;
 }
 header li li ul{
     position:absolute;
