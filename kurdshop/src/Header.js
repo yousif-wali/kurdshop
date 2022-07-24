@@ -1,5 +1,5 @@
 import {useState} from "react"
-function Header() {
+function Header(props) {
   let bars = '≡'
   let close = 'x';
  function menu(elem){
@@ -15,12 +15,13 @@ function Header() {
   }
   return window.location.href.endsWith(string) ? "nav-link active": "nav-link"
  }
-const [user, setUser] = useState({name: "", usernaem: "",email: ""});
+let userEmail = props.userinformation;
   return (
     
     <header>
         <div id='logo'> <img src={require("./image/logo/logo2.png")} alt="logo" draggable="false"/></div> 
         <div id='navigation'>
+          {userEmail}
           <span id="menu" onClick={menu}>{bars}</span> 
           <nav>
           <ul id="nav" className="nav nav-tabs">                
@@ -73,10 +74,10 @@ const [user, setUser] = useState({name: "", usernaem: "",email: ""});
           <li className="nav-item"><a className={keepActiveClass("Cloud")} data-bs-toggle="tab" href="#uploud" onClick={(e)=>{e.preventDefault();window.location="/page/Cloud"}}>Cloud </a></li>
           <li className="nav-item"><a className={keepActiveClass("Reklam")} data-bs-toggle="tab" href="#reklam" onClick={(e)=>{e.preventDefault();window.location="/page/Reklam"}}>Reklam</a></li>
           
-          {(user.email === "")? (
+          {(props.userinformation == null)? (
             <li className="nav-item"><a className={keepActiveClass("Login")} data-bs-toggle="tab" href="#login" onClick={(e)=>{e.preventDefault();window.location="/page/Login"}}>Login</a></li>       
           ):(
-            <li className="nav-item"><a className={keepActiveClass("Login")} data-bs-toggle="tab" href="#login" onClick={(e)=>{setUser({email: ""})}}>Lougout</a></li>       
+            <li className="nav-item"><a className={keepActiveClass("Login")} data-bs-toggle="tab" href="#login" onClick={(e)=>{e.preventDefault();props.userinformation = null}}>Lougout</a></li>       
           )
           }
             

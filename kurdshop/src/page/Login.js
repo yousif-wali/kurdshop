@@ -32,7 +32,7 @@ function removeAttr(elem){
 }
 const userLogin = e=>{
     e.preventDefault();
-    axios.post(`http://localhost:80/kurdshop_api/login.php?name=${fullname}&pwd=${pwd}`).then(res=>{console.log(res);  onNameChange(...res.data)})
+    axios.post(`http://localhost:80/kurdshop_api/login.php?name=${fullname}&pwd=${pwd}`, (res, err)=>{res.redirect("/")}).then(res=>{console.log(res);})
    // fetch(`http://localhost:80/kurdshop_api/test.php?type=login&username=${name}&pwd=${pwd}`).then(res => res.json())
 }
     return (
