@@ -15,7 +15,7 @@ function Header() {
   }
   return window.location.href.endsWith(string) ? "nav-link active": "nav-link"
  }
- const [user, setUser] = useState({name: "", email: ""});
+const [user, setUser] = useState({name: "", usernaem: "",email: ""});
   return (
     
     <header>

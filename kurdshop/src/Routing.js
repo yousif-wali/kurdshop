@@ -7,12 +7,15 @@ import Login from './page/Login'
 import Signup from './page/Signup'
 import Cloud from './page/Cloud'
 import {  Route, Routes } from 'react-router-dom';
+import {useState} from "react"
+
 
 export default function Routing(){
+    const [loggedin, setLoggedin] = useState({name: "", usernaem: "",email: ""});
     return(
         <div>
     <Routes>
-        <Route exact path="/" element={<App />}/>
+        <Route exact path="/" element={<App name={loggedin} onNameChange={setLoggedin}/>}/>
         <Route path="/page/Shop" element={<Shop/>}/>
         <Route path="/page/Mobile" element={<Mobile/>}/>
         <Route path="/page/Delivery" element={<Delivery/>}/>

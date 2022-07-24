@@ -1,15 +1,17 @@
 import './page.css'
 import {useState} from 'react'
 import axios from 'axios';
-export default function Login(){
-    const [name, setName] = useState("");
+export default function Login({name , onNameChange}){
+
+
+    const [fullname, setFullname] = useState("");
     const [pwd, setPwd] = useState("");
   function change(elem){
     let id = elem.target.getAttribute("id")
     let input = elem.target.value;
     switch(elem.target.getAttribute("data-input")){
         case "name":
-           setName(input);
+           setFullname(input);
             break;
         case "password":
            setPwd(input);
@@ -30,7 +32,7 @@ function removeAttr(elem){
 }
 const userLogin = e=>{
     e.preventDefault();
-    axios.post(`http://localhost:80/kurdshop_api/login.php?name=${name}&pwd=${pwd}`).then(res=>{console.log(res)})
+    axios.post(`http://localhost:80/kurdshop_api/login.php?name=${fullname}&pwd=${pwd}`).then(res=>{console.log(res);  onNameChange(...res.data)})
    // fetch(`http://localhost:80/kurdshop_api/test.php?type=login&username=${name}&pwd=${pwd}`).then(res => res.json())
 }
     return (
