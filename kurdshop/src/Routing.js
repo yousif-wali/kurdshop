@@ -3,7 +3,7 @@ import Shop from "./page/Shop"
 import Mobile from './page/Mobile'
 import Delivery from './page/Delivery'
 import Reklam from './page/Reklam'
-import Login from './page/Login'
+import Login from './page/_Login'
 import Signup from './page/Signup'
 import Cloud from './page/Cloud'
 import {  Route, Routes } from 'react-router-dom';

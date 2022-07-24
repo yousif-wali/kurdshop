@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@auth0/auth0-react": "^1.10.2",
     "axios": "^0.27.2",
     "intl-tel-input": "^17.0.16",
     "jquery": "^3.6.0",
