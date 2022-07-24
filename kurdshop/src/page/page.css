@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Joan&display=swap');
 /*          SHOP            */
+#Category{
+    height:50vh;
+}
+#Category li{
+    display: inline-block;
+    padding:0.5em 1em;
+    background-color:rgba(0, 120, 212, 1);
+    font-family:arial;
+    font-weight:bold;
+    margin:0 0.35em;
+    width:max-content;
+    border-radius:5px;
+    font-size:1.12rem;
+    cursor:pointer;
+    box-shadow: 0 2px 5px 4px rgba(0, 0, 0, 0.5);
+    transition:all 0.3s ease-in-out;
+}
+#Category li:hover{
+    box-shadow:none;
+    transform:scale(1.16);
+    border:1px solid black;
+}
+#Category li ul{
+    position:absolute;
+    left:0;
+    margin-top:0.14em;
+    display:flex;
+    flex-direction:column;
+    display:none;
+}
+#Category li li{
+    margin-top:0.25em;
+    width:100%;
+    text-align:right;
+}
+#Category li:hover ul{
+    display:block;
+    z-index:10;
+}
 /*          LOGIN           */
 .account{
     height:calc(100vh + 75px);

@@ -12,6 +12,9 @@
 body{
     overflow: hidden;
 }
+#root > div{
+    margin-top: calc(var(--header-height) + 10px);
+}
 #logo {
     position: relative;
     overflow: hidden;
@@ -117,7 +120,7 @@ header li li:hover ul{
 header li:hover{
     background-image: linear-gradient(45deg, transparent, #f25d39)
 }
-header li li{
+header li li, button{
     display:flex;
     color:#17bdb8;
     text-align:left;
@@ -127,6 +130,9 @@ header li li{
     border:1px solid white;
     border-radius:4px;
     width:100%;
+}
+header button{
+    width:max-content;
 }
 header li li ul{
     position:absolute;
