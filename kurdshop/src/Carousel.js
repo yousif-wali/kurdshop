@@ -8,7 +8,7 @@ function Carousel(props){
       document.getElementById(props.vipId).classList.add("active");
       setTimeout(()=>{
         document.getElementById(props.vipId).classList.remove("active")
-      }, 500)
+      }, 1000)
     })
     elem.addEventListener("animationend", ()=>{
           if(elem.classList.contains("active")){
@@ -23,7 +23,7 @@ function Carousel(props){
     })
 
     })
-  }, 500);
+  }, 1500);
     return(
       <div>
           <Tilt className="tilt" options={{ max : 45, perspective: 1000, scale: 1.1, transition:true, easing:"cubic-bezier(.03,.98,.52,.99)"}} >

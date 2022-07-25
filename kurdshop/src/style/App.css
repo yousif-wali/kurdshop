@@ -187,26 +187,32 @@ header li li ul{
     transition:all 0.3s ease-in;
     overflow:hidden;
 }
+#vipDetails{
+    animation:showing 0.1s forwards;
+    transition: all 0.3s ease-in-out;
+}
 #vipDetails.active{
-    animation: turning 1s forwards;
-    transition: all 1s ease-in;
+    animation: turning 10s forwards;
+    transition: all 5s ease-in-out;
+
+}
+@keyframes showing{
+    0%{
+        transform:translateX(-150%);
+    }
+    100%{
+        transform:translateX(0);
+    }
 }
 @keyframes turning{
-    0%, 100%{
+    0%{
         transform:translateX(0px);
-        display:block;
-
     }
-    50%{
-        transform:translateX(700px);
-
+    100%{
+        transform:translateX(150%)
     }
-    75%{
-        transform:translateX(-700px);
-        display:none;
-    }
-
 }
+
 .details > *{
     line-height:2em;
 }
