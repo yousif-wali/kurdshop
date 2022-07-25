@@ -41,6 +41,9 @@ header{
     outline:none;
     border:none;
 }
+.button-z{
+    transform: translateZ(10px);
+}
 #navigation{
     display:flex;
     align-items:flex-start;
@@ -163,9 +166,12 @@ header li li ul{
     background-color: transparent!important;
     width: 100% !important;
     box-shadow:none!important;
+    transform:translateZ(1000px);
+    transform-style: preserve-3d;
 }
 .details{
     background-color:hsl(0 0% 100% /0.7);
+    box-shadow:0 0 55px 25px hsl(0 0% 100% /0.7);
     width:500px;
     height:250px;
     color:black;
@@ -178,9 +184,22 @@ header li li ul{
     display:flex;
     flex-direction:column;
     align-items: center;
+    transition:all 0.3s ease-in;
 }
 .details > *{
     line-height:2em;
+}
+#user_name{
+    position:absolute;
+    inset:0 0 auto 0;
+    line-height:3em;
+    font-weight:bold;
+    margin:0 auto;
+    background-image:radial-gradient(circle, transparent, hsl(0 0% 100% /0.15), transparent);
+    backdrop-filter: blur(15px) grayscale(1);
+    text-align: center;
+    transform:translateZ(20px);
+    border-bottom:2px solid black;
 }
 #sales{
     margin: 2em auto;
@@ -188,7 +207,8 @@ header li li ul{
     height:100%;
     overflow:hidden;
     border-radius:25px;
-    box-shadow:0 0 10px grey;
+    box-shadow:0 0 30px 5px gray;
+    transition:translateZ(10px)
 }
 .carousel-inner img{
     width:100%;

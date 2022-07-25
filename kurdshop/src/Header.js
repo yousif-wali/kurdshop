@@ -1,5 +1,14 @@
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+import {categories} from "./Data/Categories";
+function Sublist(props){
+  return categories[props.item].sublist.map((list, index)=>{
+     return(
+       <li key={index}>{list.category}</li>
+     )
+   })
+   
+}
 function Header() {
   let bars = '≡'
   let close = 'x';
@@ -27,41 +36,19 @@ function Header() {
           <li className="nav-item"><a className={keepActiveClass("/")} data-bs-toggle="tab" href="/" onClick={(e)=>{e.preventDefault();window.location="/"}}>Home</a></li>
           <li className="nav-item"><a className={keepActiveClass("Shop")} data-bs-toggle="tab" href="/page/Shop" onClick={(e)=>{e.preventDefault();window.location="/page/Shop"}}>Shop</a>
           <ul>
-            <li> تۆتۆمبێل
-
-            <ul>
-                <li>Toyota</li>
-                <li>Kia </li>
-                <li>Nissan</li>
-                <li>Bmw</li>
-                <li>Shovrolet</li>
-                <li>Honda</li>
-                <li>Hiunda</li>
-                <li>Porsh</li>
-                <li>Jagware</li>
-                <li>Opel</li>
-                <li>Volkswagen</li>
-                <li>Jeep</li>
-                <li>Tesla</li>
-                <li>Deer</li>
-                <li>Bicycle</li>
-                <li>Motorcycle</li>
-              </ul>
-            </li>
-          <li>  مولك 
-          <ul>
-                <li>کرێ</li>
-                <li>فرۆشتن</li>
-                <li>شوقە</li>
-                <li>دوکان</li>
-                <li>زەوی بازرگانی</li>
-                <li>زەوی کشتوکال</li>
-                <li>مەزرەعه</li>
-                <li>زەوی بۆکرێ</li>
-              </ul>
-            </li>  
-          <li>زياتر</li>
-           </ul> 
+            {
+             categories.map((res, index)=>{
+            return (
+              
+                <li key={index}>{res.category}
+                {
+                  res.sublist && <ul><Sublist item={index}/></ul>
+                }
+                </li>
+           
+             )
+            })
+           } </ul>
         </li>
 
 

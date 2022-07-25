@@ -20,10 +20,10 @@ function Carousel(props){
   }, 500);
     return(
       <div>
-          <Tilt className="tilt">
-            <div id="sales" className="carousel slide" data-bs-ride="carousel">
+          <Tilt className="tilt" options={{ max : 45, perspective: 1000, scale: 1.1, transition:true, easing:"cubic-bezier(.03,.98,.52,.99)"}} >
+            <div id="sales" className="carousel slide Tilt-inner" data-bs-ride="carousel">
 
-<div className="carousel-indicators">
+<div className="carousel-indicators button-z" >
   <button type="button" data-bs-target="#sales" data-bs-slide-to="0" className="active"></button>
   <button type="button" data-bs-target="#sales" data-bs-slide-to="1"></button>
   <button type="button" data-bs-target="#sales" data-bs-slide-to="2"></button>
@@ -34,6 +34,7 @@ function Carousel(props){
    
     <div className={id === 0 ? "carousel-item active": "carousel-item"} key={id} data-title = { elem.title} data-desc = {elem.desc} data-src = {elem.background}>
       <img src={require("./image/"+elem.src+".jpg")} alt={elem.alt} className="d-block" />
+      <span id="user_name">User name:</span>
       </div>
     )
 
