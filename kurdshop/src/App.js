@@ -1,5 +1,6 @@
 import Carousel from './Carousel'
 import {images} from './Data'
+import Profile from "./Profile"
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <span className="col-lg-7 offset-0 col-md-7 col-sm-12">
         <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" />
         </span>
-
+<Profile/>
     </div>
   ); 
 }

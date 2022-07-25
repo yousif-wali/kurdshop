@@ -7,12 +7,18 @@ function Sublist(props){
     })
     
 }
+const scrollHeaderCategory = event => {
+  console.log('scrollTop: ', event.currentTarget.scrollTop);
+  console.log('offsetHeight: ', event.currentTarget.offsetHeight);
+  console.log(event.currentTarget.scrollTop);
+};
 export default function Shop(){
 
     return (
       <>
-        <section id="Header">
-          <section id="Category"><ul>
+        <section id="Header"  onScroll={scrollHeaderCategory} className="Header" >
+          <section id="Category">
+            <ul>
             {
              // fetch("./Data/Categories.json").then(res=>res.json()).then(res=>{console.log(res)}).catch(e=>{console.error(e.message)})
              categories.map((res, index)=>{
@@ -27,6 +33,7 @@ export default function Shop(){
              )
             })
            } </ul>
+                 
           </section>
           <section id="Post">
              <button>کاڵاکەت دانە</button>        
@@ -34,7 +41,6 @@ export default function Shop(){
         </section>
         <section id="Main">
           <section id="Posts">
-
           </section>
           <section id="Promotions">
             <section id="Vip">
