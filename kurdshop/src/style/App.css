@@ -13,6 +13,7 @@ body{
     overflow: hidden;
 }
 #root > div{
+    position:relative;
     margin-top: calc(var(--header-height) + 10px);
 }
 #logo {
