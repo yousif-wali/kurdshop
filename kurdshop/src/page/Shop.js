@@ -1,33 +1,40 @@
 import {categories} from "./../Data/Categories"
+import Profile from "./../Profile"
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
       return(
-        <li key={index}>{list.category}</li>
+        <li key={index} onClick={requestHeader} data-index={index} data-type="sublist">{list.category}</li>
       )
     })
     
 }
-const scrollHeaderCategory = event => {
-  console.log('scrollTop: ', event.currentTarget.scrollTop);
-  console.log('offsetHeight: ', event.currentTarget.offsetHeight);
-  console.log(event.currentTarget.scrollTop);
-};
+const requestHeader = e =>{
+  let id =e.target.getAttribute("data-index");
+  let sublist = e.target.getAttribute("data-type");
+  let parent = e.target.parentNode.parentNode.getAttribute("data-index");
+  if(sublist){
+    let sublistRequest = categories[parent].sublist[id].request;
+    if(sublistRequest != undefined){
+    window.location.href = window.location.origin + window.location.pathname + "?req="+ sublistRequest;
+    }
+  }else{
+  if( categories[id].request != undefined ){
+    window.location.href = window.location.origin + window.location.pathname + "?req="+ categories[id].request
+  }
+}
+}
 export default function Shop(){
 
     return (
       <>
-        <section id="Header"  onScroll={scrollHeaderCategory} className="Header" >
+        <section id="Header" className="Header" >
           <section id="Category">
             <ul>
             {
-             // fetch("./Data/Categories.json").then(res=>res.json()).then(res=>{console.log(res)}).catch(e=>{console.error(e.message)})
              categories.map((res, index)=>{
             return (
               
-                <li key={index}>{res.category}
-                {
-                  res.sublist && <ul><Sublist item={index}/></ul>
-                }
+                <li key={index} data-index={index} onClick={requestHeader} >{res.category}
                 </li>
            
              )
@@ -41,6 +48,7 @@ export default function Shop(){
         </section>
         <section id="Main">
           <section id="Posts">
+            Posts
           </section>
           <section id="Promotions">
             <section id="Vip">

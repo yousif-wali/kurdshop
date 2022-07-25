@@ -145,7 +145,7 @@ header li li ul{
 .container-fluid{
     position:absolute;
     width:100%;
-    height: calc(100% - var(--footer-height) - var(--header-height));
+    height: calc(100% - var(--footer-height) - var(--header-height) + 40px);
     margin:0 auto;
     margin-top:calc(var(--header-height) + 5px);
     padding-bottom:calc(var(--footer-height) + 5px);

@@ -5,7 +5,9 @@ const Profile = ()=>{
     return(
         isAuthenticated && (
            <article>
-            {JSON.stringify(user)}
+            {JSON.stringify(user)}{
+                console.log(user)
+            }
            </article>
         )
     )

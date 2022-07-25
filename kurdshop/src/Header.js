@@ -2,13 +2,29 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import {categories} from "./Data/Categories";
 
+
 function Sublist(props){
   return categories[props.item].sublist.map((list, index)=>{
      return(
-       <li key={index}>{list.category}</li>
+       <li key={index} onClick={requestHeader} data-index={index} data-type="sublist">{list.category}</li>
      )
    })
    
+}
+const requestHeader = e =>{
+  let id =e.target.getAttribute("data-index");
+  let sublist = e.target.getAttribute("data-type");
+  let parent = e.target.parentNode.parentNode.getAttribute("data-index");
+  if(sublist){
+    let sublistRequest = categories[parent].sublist[id].request;
+    if(sublistRequest != undefined){
+    window.location.href = window.location.origin + window.location.pathname + "?req="+ sublistRequest;
+    }
+  }else{
+  if( categories[id].request != undefined ){
+    window.location.href = window.location.origin + window.location.pathname + "?req="+ categories[id].request
+  }
+}
 }
 function Header() {
   let bars = '≡'
@@ -24,7 +40,7 @@ function Header() {
   if(string === "Login"){
     return window.location.href.includes(string) || window.location.href.includes("Signup") ? "nav-link active": "nav-link"
   }
-  return window.location.href.endsWith(string) ? "nav-link active": "nav-link"
+  return window.location.href.includes(string) ? "nav-link active": "nav-link"
  }
   return (
     
@@ -41,7 +57,7 @@ function Header() {
              categories.map((res, index)=>{
             return (
               
-                <li key={index}>{res.category}
+                <li key={index} data-index={index} onClick={requestHeader} >{res.category}
                 {
                   res.sublist && <ul><Sublist item={index}/></ul>
                 }

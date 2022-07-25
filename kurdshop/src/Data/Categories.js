@@ -1,11 +1,11 @@
 export const categories = [
 
-    {"id": 1, "category": "ئەلیکتۆرنی", "sublist":[
-        {"id": 1, "category":"موبایل"},
+    {"id": 1, "category": "ئەلیکتۆرنی","request":"electronics", "sublist":[
+        {"id": 1, "category":"موبایل", "request":"mobile"},
         {"id": 2, "category":"کۆمپیوتەر"}
     ]},
 
-    {"id": 2, "category": "کەل و پەلی ناو ماڵ"},
+    {"id": 2, "category": "کەل و پەلی ناو ماڵ", "request":"forniture"},
 
     {"id": 3, "category": "ئوتۆمبێل"},
 

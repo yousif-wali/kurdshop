@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Joan&display=swap');
 /*          SHOP            */
 #Header{
-    height:200vh;
     display:flex;
     flex-direction:row;
     align-items: flex-start;
