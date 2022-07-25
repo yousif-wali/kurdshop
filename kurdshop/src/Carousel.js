@@ -1,4 +1,6 @@
 import {images} from './Data'
+import Tilt from "react-vanilla-tilt"
+
 function Carousel(props){
   setTimeout(()=>{
   document.querySelectorAll(".carousel-item").forEach((elem)=>{
@@ -17,7 +19,8 @@ function Carousel(props){
     })
   }, 500);
     return(
-        <div>
+      <div>
+          <Tilt className="tilt">
             <div id="sales" className="carousel slide" data-bs-ride="carousel">
 
 <div className="carousel-indicators">
@@ -46,8 +49,9 @@ function Carousel(props){
   <span className="carousel-control-next-icon"></span>
 </button>
 </div>
-
+</Tilt>
         </div>
+        
     )
 }
 export default Carousel

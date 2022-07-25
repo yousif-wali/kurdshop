@@ -13,7 +13,7 @@ body{
     overflow: hidden;
 }
 #root > div{
-    position:relative;
+
     margin-top: calc(var(--header-height) + 10px);
 }
 #logo {
@@ -142,12 +142,13 @@ header li li ul{
 .container-fluid{
     position:absolute;
     width:100%;
-    height:calc(100% + var(--footer-height));
+    height: calc(100% - var(--footer-height) - var(--header-height));
     margin:0 auto;
     margin-top:calc(var(--header-height) + 5px);
     padding-bottom:calc(var(--footer-height) + 5px);
     overflow:hidden;
     font-family:Comfortaa;
+    gap:1em;
 }
 .app{
     color:#ffffff;
@@ -158,7 +159,29 @@ header li li ul{
 .container-fluid p{
     font-family:Comfortaa;
 }
-
+.tilt{
+    background-color: transparent!important;
+    width: 100% !important;
+    box-shadow:none!important;
+}
+.details{
+    background-color:hsl(0 0% 100% /0.7);
+    width:500px;
+    height:250px;
+    color:black;
+    text-align:center;
+    padding-top:2em;
+    padding-right:2em;
+    backdrop-filter: blur(5px);
+    border-radius:15px;
+    line-height: 1.5em;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+.details > *{
+    line-height:2em;
+}
 #sales{
     margin: 2em auto;
     width:70%;
