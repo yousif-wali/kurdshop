@@ -12,6 +12,10 @@
 body{
     overflow: hidden;
 }
+#root > div{
+
+    margin-top: calc(var(--header-height) + 10px);
+}
 #logo {
     position: relative;
     overflow: hidden;
@@ -36,6 +40,9 @@ header{
 .nav li a[href='#login']{
     outline:none;
     border:none;
+}
+.button-z{
+    transform: translateZ(10px);
 }
 #navigation{
     display:flex;
@@ -117,7 +124,7 @@ header li li:hover ul{
 header li:hover{
     background-image: linear-gradient(45deg, transparent, #f25d39)
 }
-header li li{
+header li li, button{
     display:flex;
     color:#17bdb8;
     text-align:left;
@@ -128,6 +135,9 @@ header li li{
     border-radius:4px;
     width:100%;
 }
+header button{
+    width:max-content;
+}
 header li li ul{
     position:absolute;
     left:calc(var(--ul-dropdown-header-width) - 10px);
@@ -135,12 +145,13 @@ header li li ul{
 .container-fluid{
     position:absolute;
     width:100%;
-    height:calc(100% + var(--footer-height));
+    height: calc(100% - var(--footer-height) - var(--header-height));
     margin:0 auto;
     margin-top:calc(var(--header-height) + 5px);
     padding-bottom:calc(var(--footer-height) + 5px);
     overflow:hidden;
     font-family:Comfortaa;
+    gap:1em;
 }
 .app{
     color:#ffffff;
@@ -151,14 +162,53 @@ header li li ul{
 .container-fluid p{
     font-family:Comfortaa;
 }
-
+.tilt{
+    background-color: transparent!important;
+    width: 100% !important;
+    box-shadow:none!important;
+    transform:translateZ(1000px);
+    transform-style: preserve-3d;
+}
+.details{
+    background-color:hsl(0 0% 100% /0.7);
+    box-shadow:0 0 55px 25px hsl(0 0% 100% /0.7);
+    width:500px;
+    height:250px;
+    color:black;
+    text-align:center;
+    padding-top:2em;
+    padding-right:2em;
+    backdrop-filter: blur(5px);
+    border-radius:15px;
+    line-height: 1.5em;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    transition:all 0.3s ease-in;
+}
+.details > *{
+    line-height:2em;
+}
+#user_name{
+    position:absolute;
+    inset:0 0 auto 0;
+    line-height:3em;
+    font-weight:bold;
+    margin:0 auto;
+    background-image:radial-gradient(circle, transparent, hsl(0 0% 100% /0.15), transparent);
+    backdrop-filter: blur(15px) grayscale(1);
+    text-align: center;
+    transform:translateZ(20px);
+    border-bottom:2px solid black;
+}
 #sales{
     margin: 2em auto;
     width:70%;
     height:100%;
     overflow:hidden;
     border-radius:25px;
-    box-shadow:0 0 10px grey;
+    box-shadow:0 0 30px 5px gray;
+    transition:translateZ(10px)
 }
 .carousel-inner img{
     width:100%;

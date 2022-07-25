@@ -1,5 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Joan&display=swap');
 /*          SHOP            */
+#Header{
+    height:40vh;
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#Category li{
+    position:relative;
+    display: inline-block;
+    padding:0.5em 1em;
+    background-color:rgba(0, 120, 212, 1);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:bold;
+    margin:0 0.35em;
+    width:max-content;
+    border-radius:5px;
+    font-size:1.12rem;
+    cursor:pointer;
+    box-shadow: 0 2px 5px 4px rgba(0, 0, 0, 0.5);
+    transition:all 0.2s ease-in-out;
+    transform:skewY(-3deg)
+}
+#Category li:hover{
+    box-shadow:0 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
+#Category li ul{
+    position:absolute;
+    inset:auto 0 auto auto;
+    margin:0 auto;
+    margin-top:0.25em;
+    display:none;
+    width:max-content;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.4s ease-in;
+    z-index:999;
+}
+#Category li li{
+    background-color:hsl(200, 100%, 42%);
+    margin-top:0.4em;
+    width:100%;
+    text-align:right;
+}
+#Category li:hover ul{
+  display:flex;
+}
+#Post{
+    border-left: 3px solid rgba(0, 120, 212, 1);
+    position:relative;
+}
+#Post button{
+    position:absolute;
+    width:max-content;
+    padding:1em;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    font-weight:bold;
+    border-radius:25px;
+    box-shadow: 0 2px 5px 4px rgba(0, 0, 0, 0.5);
+    transition:all 0.3s linear;
+}
+#Post button:hover{
+    box-shadow:0 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
 /*          LOGIN           */
 .account{
     height:calc(100vh + 75px);
