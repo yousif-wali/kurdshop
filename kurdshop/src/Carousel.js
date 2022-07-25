@@ -4,6 +4,12 @@ import Tilt from "react-vanilla-tilt"
 function Carousel(props){
   setTimeout(()=>{
   document.querySelectorAll(".carousel-item").forEach((elem)=>{
+    elem.addEventListener("animationstart", ()=>{
+      document.getElementById(props.vipId).classList.add("active");
+      setTimeout(()=>{
+        document.getElementById(props.vipId).classList.remove("active")
+      }, 500)
+    })
     elem.addEventListener("animationend", ()=>{
           if(elem.classList.contains("active")){
             try{ 

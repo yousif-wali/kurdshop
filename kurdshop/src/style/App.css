@@ -185,6 +185,27 @@ header li li ul{
     flex-direction:column;
     align-items: center;
     transition:all 0.3s ease-in;
+    overflow:hidden;
+}
+#vipDetails.active{
+    animation: turning 1s forwards;
+    transition: all 1s ease-in;
+}
+@keyframes turning{
+    0%, 100%{
+        transform:translateX(0px);
+        display:block;
+
+    }
+    50%{
+        transform:translateX(700px);
+
+    }
+    75%{
+        transform:translateX(-700px);
+        display:none;
+    }
+
 }
 .details > *{
     line-height:2em;
@@ -210,6 +231,7 @@ header li li ul{
     box-shadow:0 0 30px 5px gray;
     transition:translateZ(10px)
 }
+
 .carousel-inner img{
     width:100%;
     height:100%;

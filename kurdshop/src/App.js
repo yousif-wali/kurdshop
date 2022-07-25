@@ -12,11 +12,12 @@ function App() {
         </div>
       </div>
       <span className="col-lg-5 offset-0 col-md-5 col-sm-12 details" style={{marginTop: '9em'}}>
+        <div id="vipDetails">
         <h3 id="title">{images[0].title}</h3>
-        <p id="desc">{images[0].desc}</p>
+        <p id="desc">{images[0].desc}</p></div>
         </span>
       <span className="col-lg-7 offset-0 col-md-7 col-sm-12">
-        <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" />
+        <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" vipId= "vipDetails" />
         </span>
 <Profile/>
     </div>
