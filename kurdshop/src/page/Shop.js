@@ -1,5 +1,6 @@
 import {categories} from "./../Data/Categories"
 import Profile from "./../Profile"
+import { useAuth0 } from "@auth0/auth0-react";
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
       return(
@@ -49,6 +50,7 @@ export default function Shop(){
         <section id="Main">
           <section id="Posts">
             Posts
+            <Profile/>
           </section>
           <section id="Promotions">
             <section id="Vip">
