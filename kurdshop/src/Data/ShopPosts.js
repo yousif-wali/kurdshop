@@ -1,22 +1,20 @@
 // import React, {useState, useEffect} from 'react';
-export default function ShopPosts(){
-    // const [data, setData] = useState([]);
-    // async function collectingData(){
-    //     fetch("http://localhost:3001/saleposts/log")
-    //     .then(response => response.json())
-    //     .then(data => setData(data));
-    // }
-    // useEffect(()=>{
-    //     collectingData();
-    //     setInterval(()=>{
-    //     collectingData();
-    // }, 3000);
-    // }, []);
+import "./css/style.css"
+export default function ShopPosts(props){
+  console.log(props.saleposts)
     return(
-        <div>
-        <ul>
-         
-        </ul>
-      </div>
+        <>
+        <section className="post">
+          {props.saleposts.map((item, index)=>{
+            return(
+              <article key={index}>
+              <h5>{item.category}</h5>
+              <img src={item.files}/>
+              <h6>${item.price}</h6>
+              </article>
+            )
+          })}
+        </section>
+      </>
     )
 }

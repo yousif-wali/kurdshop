@@ -17,11 +17,11 @@ const requestHeader = e =>{
   let parent = e.target.parentNode.parentNode.getAttribute("data-index");
   if(sublist){
     let sublistRequest = categories[parent].sublist[id].request;
-    if(sublistRequest != undefined){
+    if(sublistRequest !== undefined){
     window.location.href = window.location.origin + window.location.pathname + "?req="+ sublistRequest;
     }
   }else{
-  if( categories[id].request != undefined ){
+  if( categories[id].request !== undefined ){
     window.location.href = window.location.origin + window.location.pathname + "?req="+ categories[id].request
   }
 }
@@ -67,16 +67,8 @@ function Header() {
             })
            } </ul>
         </li>
-
-
-        
- 
-
-          <li className="nav-item"><a className={keepActiveClass("Mobile")} data-bs-toggle="tab" href="#mobile" onClick={(e)=>{e.preventDefault();window.location="/page/Mobile"}}>Mobile</a></li>
-          <li className="nav-item"><a className={keepActiveClass("Delivery")} data-bs-toggle="tab" href="#delivery" onClick={(e)=>{e.preventDefault();window.location="/page/Delivery"}}>Delivery</a></li>
-          <li className="nav-item"><a className={keepActiveClass("Cloud")} data-bs-toggle="tab" href="#uploud" onClick={(e)=>{e.preventDefault();window.location="/page/Cloud"}}>Cloud </a></li>
-          <li className="nav-item"><a className={keepActiveClass("Reklam")} data-bs-toggle="tab" href="#reklam" onClick={(e)=>{e.preventDefault();window.location="/page/Reklam"}}>Reklam</a></li>
-          
+        <li className="nav-item"><a className={keepActiveClass("Cloud")} data-bs-toggle="tab" href="#uploud" onClick={(e)=>{e.preventDefault();window.location="/page/Cloud"}}>Cloud </a></li>
+      
           {/* {(props.userinformation == null)? (
             <li className="nav-item"><a className={keepActiveClass("Login")} data-bs-toggle="tab" href="#login" onClick={(e)=>{e.preventDefault();window.location="/page/Login"}}>Login</a></li>       
           ):(

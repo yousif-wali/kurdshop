@@ -78,10 +78,15 @@ header{
     width:150px;
     margin-top:calc(100% / 3.5);
 }
-.nav-link.active{
+.nav-item{
     background-color:hsl(0 100% 0% / 0.8)!important;
-    backdrop-filter: blur(0.5px);
-    color:white!important;
+}
+#nav{
+    padding-right:10em;
+}
+.nav-link.active{
+    background-color:hsl(0 100% 0% / 0.1)!important;
+    color:#17bdb8!important;
 }
 
 header .nav a{
@@ -120,10 +125,10 @@ header li:hover li ul{
 }
 header li li:hover ul{
     display:block;
-}
+}/*
 header li:hover{
     background-image: linear-gradient(45deg, transparent, #f25d39)
-}
+}*/
 header li li, button{
     display:flex;
     color:#17bdb8;

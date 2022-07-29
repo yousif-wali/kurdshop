@@ -1,6 +1,8 @@
 import {categories} from "./../Data/Categories"
 import Profile from "./../Profile"
-import { useAuth0 } from "@auth0/auth0-react";
+import {useEffect, useState} from "react"
+import axios from '../api/axios';
+import Posts from "./../Data/ShopPosts"
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
       return(
@@ -25,7 +27,10 @@ const requestHeader = e =>{
 }
 }
 export default function Shop(){
-
+  const [posts, setPosts] = useState([])
+  useEffect(() => {
+    axios.get("/saleposts/log").then(res => setPosts(res.data))
+  }, []);
     return (
       <>
         <section id="Header" className="Header" >
@@ -49,7 +54,7 @@ export default function Shop(){
         </section>
         <section id="Main">
           <section id="Posts">
-            Posts
+            <Posts  saleposts={posts}/>
             <Profile/>
           </section>
           <section id="Promotions">

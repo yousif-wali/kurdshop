@@ -16,6 +16,7 @@ app.use(express.json());
  app.get('/saleposts/log', async (req, res)=>{
    const sqlSelect = "select * from sales";
      db.query(sqlSelect, (err, result)=>{
+        res.send(result)
        console.log(err)
     })
 })
