@@ -240,3 +240,60 @@ dialog span{
 /*          MOBILE          */
 /*          RELIGION        */
 /*          REKLAM          */
+/*          POSTS           */
+@font-face{
+    font-family:rudawbold;
+    src: "./../resources/font/redawbold.ttf";
+}
+main{
+    min-height:130vh;
+    position:relative;
+}
+.posting{
+    padding: 0.5em 1em 1.5em 1em;
+    height:100%;
+}
+.posting section:last-child form > span{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    margin-top:1em;
+    font-family:rudawbold;
+    font-weight:bolder;
+    font-size:1.1rem;
+}
+.posting section:last-child form > span label{
+    margin-right:1em;
+    cursor:pointer;
+}
+.quality span{
+    padding:0.5em;
+    margin:0.5em;
+    cursor:pointer;
+} 
+@media screen and (min-width: 62em){
+    .posting span{
+        width:250%;
+    }
+}
+@media screen and (max-width:36em){
+    .posting{
+        height:max-content;
+        flex-direction:column!important;
+        background-color:orange!important;
+    }
+}
+.posting input:not([type="radio"]), .posting textarea, .posting select{
+   width:100%;
+   max-height:250px;
+   min-height:40px;
+   cursor:pointer;
+}
+.posting-reklam{
+    height:200px;
+    border:1px solid black;
+}
+.posting button{
+    width:max-content;
+    padding:1em;
+}

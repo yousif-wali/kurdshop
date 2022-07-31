@@ -3,6 +3,7 @@ import Profile from "./../Profile"
 import {useEffect, useState} from "react"
 import axios from '../api/axios';
 import Posts from "./../Data/ShopPosts"
+/*
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
       return(
@@ -11,17 +12,18 @@ function Sublist(props){
     })
     
 }
+*/
 const requestHeader = e =>{
   let id =e.target.getAttribute("data-index");
   let sublist = e.target.getAttribute("data-type");
   let parent = e.target.parentNode.parentNode.getAttribute("data-index");
   if(sublist){
     let sublistRequest = categories[parent].sublist[id].request;
-    if(sublistRequest != undefined){
+    if(sublistRequest !== undefined){
     window.location.href = window.location.origin + window.location.pathname + "?req="+ sublistRequest;
     }
   }else{
-  if( categories[id].request != undefined ){
+  if( categories[id].request !== undefined ){
     window.location.href = window.location.origin + window.location.pathname + "?req="+ categories[id].request
   }
 }
@@ -49,7 +51,7 @@ export default function Shop(){
                  
           </section>
           <section id="Post">
-             <button>کاڵاکەت دانە</button>        
+             <button onClick={(e)=>{e.preventDefault();window.location="/page/Post"}}>کاڵاکەت دانە</button>        
           </section>
         </section>
         <section id="Main">
