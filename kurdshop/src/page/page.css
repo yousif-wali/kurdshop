@@ -3,11 +3,44 @@
 #Header{
     display:flex;
     flex-direction:row;
-    align-items: flex-start;
+    align-items: baseline;
     justify-content: space-around;
+    z-index:4;
+    position:absolute;
+    min-height:30vh;
+    width:100%;
 }
-#Category{
-    height:100%;
+#MobileCategory{
+    display:none;
+}
+@media screen and (max-width:36em){
+    #Header{
+        position:relative;
+    }
+    #Category{
+        display:none;
+    }
+    #MobileCategory{
+        display:block;
+    }
+    #Posts{
+        margin-top:0!important;
+    }
+}
+#MobileCategory{
+    width:95%;
+    padding:0 1em;
+    background-image:radial-gradient(circle, green, darkorange);
+    margin:0 auto;  
+}
+#MobileCategory details{
+    border-bottom:1px solid black;
+    transition:all 0.3s linear;
+}
+#MobileCategory details summary ~ *{
+    display:block;
+    background-color:purple;
+    padding:0.5em 1em;
 }
 #Category li{
     position:relative;
@@ -48,6 +81,12 @@
 }
 #Category li:hover ul{
     display:flex;
+  }
+  #Posts{
+    position:absolute;
+    height:auto;
+    width:100%;
+    margin-top:10vh;
   }
 #Post button{
     width:max-content;
