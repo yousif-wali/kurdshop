@@ -162,9 +162,9 @@ header li li ul{
 .container-fluid{
     position:absolute;
     width:100%;
-    height: calc(100% - var(--footer-height) - var(--header-height) + 40px);
+    /*height: calc(100% - var(--footer-height) - var(--header-height) + 40px);*/
     margin:0 auto;
-    margin-top:calc(var(--header-height) + 5px);
+    /*margin-top:calc(var(--header-height) + 5px);*/
     padding-bottom:calc(var(--footer-height) + 5px);
     overflow:hidden;
     font-family:Comfortaa;
@@ -190,7 +190,7 @@ header li li ul{
     background-color:hsl(0 0% 100% /0.7);
     box-shadow:0 0 55px 25px hsl(0 0% 100% /0.7);
     width:500px;
-    height:250px;
+    height:max-content;
     color:black;
     text-align:center;
     padding-top:2em;
@@ -204,18 +204,24 @@ header li li ul{
     transition:all 0.3s ease-in;
     overflow:hidden;
 }
+@media screen and (max-width: 36em){
+    .details{
+        height:max-content;
+        margin-top:0;
+    }
+}
 #vipDetails{
-    animation:showing 0.1s forwards;
-    transition: all 0.3s ease-in-out;
+    animation:showing 0.3s forwards;
+    transition: all 0.1s ease-in-out;
 }
 #vipDetails.active{
-    animation: turning 10s forwards;
-    transition: all 5s ease-in-out;
+    animation: turning 0.5s forwards;
+    transition: all 0.1s ease-in-out;
 
 }
 @keyframes showing{
     0%{
-        transform:translateX(-150%);
+        transform:translateX(-105%);
     }
     100%{
         transform:translateX(0);
@@ -246,13 +252,19 @@ header li li ul{
     border-bottom:2px solid black;
 }
 #sales{
-    margin: 2em auto;
+    margin: 0 auto;
     width:70%;
     height:100%;
     overflow:hidden;
     border-radius:25px;
     box-shadow:0 0 30px 5px gray;
-    transition:translateZ(10px)
+    transition:translateZ(10px);
+    padding:0;
+}
+@media screen and (max-width: 36em){
+.sliders div{
+    padding:0!important;
+}
 }
 
 .carousel-inner img{
@@ -355,9 +367,11 @@ a[data-type=tiktok]{
     }
 }
 @media screen and (max-width:900px){
+    /*
     .container-fluid{
         margin-top:calc(var(--header-height) + 40px)
     }
+    */
 }
 @media screen and (max-width:41em){
     #navigation{

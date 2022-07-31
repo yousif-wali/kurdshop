@@ -16,7 +16,7 @@ function App() {
         <h3 id="title">{images[0].title}</h3>
         <p id="desc">{images[0].desc}</p></div>
         </span>
-      <span className="col-lg-7 offset-0 col-md-7 col-sm-12">
+      <span className="col-lg-7 offset-0 col-md-7 col-sm-12 sliders">
         <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" vipId= "vipDetails" />
         </span>
 <Profile/>
