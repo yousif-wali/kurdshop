@@ -18,7 +18,7 @@ export default function post(){
             <section className="posting-reklam">
                 Reklam
             </section>
-            <section className="mt-md-4 mt-4 mt-lg-0">
+            <section className="mt-md-4 mt-4 mt-lg-0 input-info">
                 <form onSubmit={sendingPost}>
             <span>
                 <label htmlFor="name">ناوی كاڵا:</label>

@@ -6,6 +6,9 @@
     align-items: flex-start;
     justify-content: space-around;
 }
+#Category{
+    height:100%;
+}
 #Category li{
     position:relative;
     display: inline-block;
@@ -46,21 +49,38 @@
 #Category li:hover ul{
   display:flex;
 }
-#Post{
-    border-left: 3px solid rgba(0, 120, 212, 1);
-    position:relative;
-}
 #Post button{
-    position:absolute;
     width:max-content;
     padding:1em;
     text-align:center;
-    display:flex;
-    align-items: center;
     font-weight:bold;
     border-radius:25px;
     box-shadow: 0 2px 5px 4px rgba(0, 0, 0, 0.5);
     transition:all 0.3s linear;
+}
+@media screen and (max-width: 44em){
+    #Header{
+        flex-direction:column
+    }
+    #Category{
+        margin:0 auto;
+    }
+    #Category ul{
+        position: relative;
+        display:grid;
+        grid-template-columns: auto auto auto;
+        grid-gap:10px;
+        padding-left:0;
+    }
+    #Category ul li{
+        padding:0.5em 0.6em;
+        width:100%;
+        height:max-content;
+        text-align:center;
+    }
+    #Post{
+        margin:1em auto;
+    }
 }
 #Post button:hover{
     box-shadow:0 2px 3px 2px rgba(0, 0, 0, 0.5);
@@ -246,7 +266,7 @@ dialog span{
     src: "./../resources/font/redawbold.ttf";
 }
 main{
-    min-height:130vh;
+    min-height:calc(100vh);
     position:relative;
 }
 .posting{
@@ -272,8 +292,8 @@ main{
     cursor:pointer;
 } 
 @media screen and (min-width: 62em){
-    .posting span{
-        width:250%;
+    .input-info{
+        width:50%;
     }
 }
 @media screen and (max-width:36em){

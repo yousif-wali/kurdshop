@@ -16,11 +16,6 @@ body{
 
     margin-top: calc(var(--header-height) + 10px);
 }
-@media screen and (max-width:36em){
-    #root > div{
-        margin-top:0!important;
-    }
-}
 #logo {
     position: relative;
     overflow: hidden;
