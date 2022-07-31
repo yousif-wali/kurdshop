@@ -23,6 +23,9 @@
     #MobileCategory{
         display:block;
     }
+    #Main{
+        min-height:200px;
+    }
     #Posts{
         margin-top:0!important;
     }
