@@ -12,6 +12,9 @@ function Sublist(props){
     e.preventDefault()
  }
 export default function post(){
+    if(window.location.href.includes("/page/Post")){
+        setTimeout(()=>{document.getElementsByTagName("footer")[0].style.display = "none"}, 10);
+    }
     return(
         <main className="container">
         <div className=" offset-0 col-12 posting bg-success rounded d-flex flex-lg-row-reverse justify-content-between flex-sm-column flex-md-column" dir={document.documentElement.getAttribute("lan") === "kurd"? "ltr": "rtl"}>
@@ -69,7 +72,10 @@ export default function post(){
             </span>
             <span>
                 <label>وێنە/کانی کاڵا:</label>
-                <input type="file" name="upload" id="upload" accept="image/*" />
+                <span>
+                    <label htmlFor="upload" data-type="upload"></label>
+                </span>
+                <input type="file" name="upload" id="upload" accept="image/*" style={{"display": "none"}}/>
             </span>
             <span>
                 <button>زیاد کردنی كاڵا</button>

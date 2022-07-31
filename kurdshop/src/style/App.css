@@ -129,18 +129,21 @@ header li ul{
     width:max-content;
     display:none;
 }
-header li:hover ul{
-    display:block;
-}
-header li:hover li ul{
-    display:none;
-}
-header li li:hover ul{
-    display:block;
-}/*
+/*
 header li:hover{
     background-image: linear-gradient(45deg, transparent, #f25d39)
 }*/
+@media screen and (min-width: 45em){
+    header li:hover ul{
+        display:block;
+    }
+    header li:hover li ul{
+        display:none;
+    }
+    header li li:hover ul{
+        display:block;
+    }
+}
 header li li, button{
     display:flex;
     color:#17bdb8;

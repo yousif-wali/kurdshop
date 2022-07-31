@@ -47,8 +47,8 @@
     text-align:right;
 }
 #Category li:hover ul{
-  display:flex;
-}
+    display:flex;
+  }
 #Post button{
     width:max-content;
     padding:1em;
@@ -273,6 +273,11 @@ main{
     padding: 0.5em 1em 1.5em 1em;
     height:100%;
 }
+.posting select option{
+    border:1px solid black;
+    text-decoration:underline;
+    text-decoration-color:#EE1D52;
+}
 .posting section:last-child form > span{
     display:flex;
     flex-direction:column;
@@ -316,4 +321,34 @@ main{
 .posting button{
     width:max-content;
     padding:1em;
+    position: relative!important;
+    padding-left:3em; 
+    display:flex;
+    justify-content: left;
+    align-items:baseline;
+}
+.posting button::after{
+    content:"+";
+    position:absolute;
+    left:1em;
+    font-size:1.2rem;
+    font-weight:bolder;
+    transform:scale(2);
+}
+label[data-type="upload"]{
+    position:relative;
+    outline:1px solid orange;
+    background-color:hsl(0 0% 100% / 0.6);
+    backdrop-filter:blur(50px);
+    width:100%;
+    border-radius:25px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    aspect-ratio:2/1;
+    margin-right:0!important;
+}
+label[data-type="upload"]::before{
+    content: "\1F4E4";
+    transform:scale(4)
 }
