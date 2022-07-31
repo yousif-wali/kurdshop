@@ -9,7 +9,7 @@ export default function ShopPosts(props){
             return(
               <article key={index}>
               <h5>{item.category}</h5>
-              <img src={item.files}/>
+              <img src={item.files} alt={item.files}/>
               <h6>${item.price}</h6>
               </article>
             )
