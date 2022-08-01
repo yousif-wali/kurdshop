@@ -48,6 +48,11 @@
         display:none;
     }
 }
+@media screen and (max-width:380px){
+    main{
+        min-height:160vh!important;
+    }
+}
 #MobileCategory{
     width:95%;
     padding:0 1em;
