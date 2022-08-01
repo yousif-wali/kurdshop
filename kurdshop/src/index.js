@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Routing from "./Routing";
 import { BrowserRouter } from 'react-router-dom';
 //import { AuthProvider } from './AuthProvider';
+import MobileCategory from "./page/Mobilefooter";
 import { Auth0Provider} from '@auth0/auth0-react';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -24,5 +25,6 @@ root.render(
     <Routing />
     </BrowserRouter> 
    <Footer theYear={theYear}/>
+   <MobileCategory />
   </React.StrictMode>
 );

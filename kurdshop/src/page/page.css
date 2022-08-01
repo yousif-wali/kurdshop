@@ -11,13 +11,21 @@
     width:100%;
 }
 #MobileCategory{
-    display:none;
+    display:flex;
 }
-@media screen and (max-width:36em){
+.mobile-footer{
+    border-start-start-radius:50%;
+    border-start-end-radius:50%;
+    box-shadow:0 0 15px 10px hsl(0 0% 100% / 0.6);
+}
+@media screen and (max-width:45em){
     #Header{
         position:relative;
     }
     #Category{
+        display:none;
+    }
+    footer{
         display:none;
     }
     #MobileCategory{
@@ -28,6 +36,9 @@
     }
     #Posts{
         margin-top:0!important;
+    }
+    #Post{
+        display:none;
     }
 }
 #MobileCategory{
@@ -342,12 +353,24 @@ main{
     .input-info{
         width:50%;
     }
+    footer{
+        display:flex;
+    }
+    .mobile-footer{
+        display:none;
+    }
 }
 @media screen and (max-width:36em){
     .posting{
         height:max-content;
         flex-direction:column!important;
         background-color:orange!important;
+    }
+    footer{
+        display:none;
+    }
+    .mobile-footer{
+        display:flex;
     }
 }
 .posting input:not([type="radio"]), .posting textarea, .posting select{
