@@ -11,16 +11,20 @@
     width:100%;
 }
 #MobileCategory{
-    display:flex;
+    display:none;
 }
 .mobile-footer{
     border-start-start-radius:50%;
     border-start-end-radius:50%;
     box-shadow:0 0 15px 10px hsl(0 0% 100% / 0.6);
+    display:flex;
+    bottom:0;
 }
-@media screen and (max-width:45em){
+@media screen and (max-width:55em){
     #Header{
         position:relative;
+        min-height:max-content;
+        padding:1em;
     }
     #Category{
         display:none;
@@ -33,6 +37,9 @@
     }
     #Main{
         min-height:200px;
+    }
+    main{
+        min-height: 110vh!important;
     }
     #Posts{
         margin-top:0!important;
