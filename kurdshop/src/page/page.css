@@ -50,7 +50,7 @@
 }
 @media screen and (max-width:400px){
     main{
-        min-height:160vh!important;
+        min-height:150vh!important;
     }
 }
 #MobileCategory{
