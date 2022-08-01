@@ -11,7 +11,8 @@ function App() {
           <img id="coverImage" src={require("./image/"+images[0].background+".jpg")} alt="Background"/>
         </div>
       </div>
-      <span className="col-lg-5 offset-0 col-md-5 col-sm-12 details" style={{marginTop: '9em'}}>
+      <div className="vipad">
+      <span className="col-lg-5 offset-0 col-md-5 col-sm-12 details">
         <div id="vipDetails">
         <h3 id="title">{images[0].title}</h3>
         <p id="desc">{images[0].desc}</p></div>
@@ -19,6 +20,7 @@ function App() {
       <span className="col-lg-7 offset-0 col-md-7 col-sm-12 sliders">
         <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" vipId= "vipDetails" />
         </span>
+        </div>
 <Profile/>
     </div>
   ); 

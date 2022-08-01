@@ -192,12 +192,11 @@ header li li ul{
 .details{
     background-color:hsl(0 0% 100% /0.7);
     box-shadow:0 0 55px 25px hsl(0 0% 100% /0.7);
-    width:500px;
     height:max-content;
+    width:400px;
     color:black;
     text-align:center;
-    padding-top:2em;
-    padding-right:2em;
+    padding:2em 1em;
     backdrop-filter: blur(5px);
     border-radius:15px;
     line-height: 1.5em;
@@ -206,11 +205,21 @@ header li li ul{
     align-items: center;
     transition:all 0.3s ease-in;
     overflow:hidden;
+    word-break: break-all;
+    margin-top:0;
+}
+.vipad{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
 }
 @media screen and (max-width: 36em){
     .details{
         height:max-content;
-        margin-top:0;
+        width:100%;
+    }
+    .vipad{
+        flex-direction:column
     }
 }
 #vipDetails{
