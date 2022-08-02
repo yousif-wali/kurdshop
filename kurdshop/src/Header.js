@@ -1,7 +1,7 @@
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import {categories} from "./Data/Categories";
-
+import Profile from "./Profile"
 
 function Sublist(props){
   return categories[props.item].sublist.map((list, index)=>{
@@ -43,7 +43,7 @@ function Header() {
   return window.location.href.includes(string) ? "nav-link active": "nav-link"
  }
   return (
-    
+    <>
     <header>
         <div id='logo'> <img src={require("./image/logo/logo2.png")} alt="logo" draggable="false"/></div> 
         <div id='navigation'>
@@ -77,13 +77,23 @@ function Header() {
           }
              */
               }
-              <LoginButton/>
-              <LogoutButton/>
           </ul>  
           </nav>
          </div> 
+          <div className="profile-icon" onClick={()=>{document.getElementById("profile").classList.toggle("active")}}><i className="fa fa-user"></i></div>
       
     </header>
+    <span id="profile">
+      <h3>Profile</h3>
+    <div id="userinformation">
+    <Profile/>
+    </div>
+    <div id="credential-button">
+    <LoginButton/>
+    <LogoutButton/>
+    </div>
+    </span>
+    </>
   );
 }
 

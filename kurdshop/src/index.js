@@ -20,11 +20,11 @@ root.render(
     clientId={clientId}
     redirectUri = {window.location.origin}
     ><Header />
-    </Auth0Provider>
     <BrowserRouter>
     <Routing />
     </BrowserRouter> 
    <Footer theYear={theYear}/>
    <MobileCategory />
+    </Auth0Provider>
   </React.StrictMode>
 );

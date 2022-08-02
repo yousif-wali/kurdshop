@@ -1,8 +1,8 @@
 import {categories} from "./../Data/Categories"
-import Profile from "./../Profile"
 import {useEffect, useState} from "react"
 import axios from '../api/axios';
 import Posts from "./../Data/ShopPosts"
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
@@ -53,6 +53,7 @@ const requestHeader = e =>{
 }
 export default function Shop(){
   const [posts, setPosts] = useState([])
+  const { isAuthenticated } = useAuth0()
   useEffect(() => {
     axios.get("/saleposts/log").then(res => setPosts(res.data))
   }, []);
@@ -93,13 +94,14 @@ export default function Shop(){
            }
           </section>
           <section id="Post">
-             <button onClick={(e)=>{e.preventDefault();window.location="/page/Post"}}>کاڵاکەت دانە</button>        
-          </section>
+            {
+             isAuthenticated && <button onClick={(e)=>{e.preventDefault();window.location="/page/Post"}}>کاڵاکەت دانە</button>        
+            }
+             </section>
         </section>
         <section id="Main">
           <section id="Posts">
             <Posts  saleposts={posts}/>
-            <Profile/>
           </section>
           <section id="Promotions">
             <section id="Vip">

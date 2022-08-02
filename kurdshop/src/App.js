@@ -1,7 +1,5 @@
 import Carousel from './Carousel'
 import {images} from './Data'
-import Profile from "./Profile"
-
 
 function App() {
   return (
@@ -21,7 +19,6 @@ function App() {
         <Carousel title = "title" desc = "desc" backgroundImage = "coverImage" vipId= "vipDetails" />
         </span>
         </div>
-<Profile/>
     </div>
   ); 
 }

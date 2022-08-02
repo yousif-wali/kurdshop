@@ -29,13 +29,47 @@ header{
     background-color:hsl(0 0% 100% /0.7);
     backdrop-filter: blur(0.5px);
     display:grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto 100px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     top:0;
     min-height: var(--header-height);
     z-index:15;
+    border-bottom:1px solid black;
+}
+.profile-icon{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width:100%;
+    height:max-content;
+    transform:scale(2);
+    cursor:pointer;
+}
+#profile{
+    position:fixed;
+    top:var(--header-height);
+    right:0;
+    height:calc(100% - var(--footer-height) - var(--header-height));
+    background-color:hsl(0 0% 100% / 0.5);
+    backdrop-filter:blur(5px);
+    width:max-content;
+    min-width:200px;
+    z-index:90;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:center;
+    border:1px solid orange;
+    transform:translateX(200px);
+    transition:all 0.4s ease-in;
+}
+#profile.active{
+    transform:translateX(0)
+}
+#userinformation img{
+    width:100%;
 }
 .nav li a[href='#login']{
     outline:none;
@@ -85,17 +119,13 @@ header{
 .nav-item{
     background-color:hsl(0 100% 0% / 0.8)!important;
 }
-#nav{
-    padding-right:10em;
-}
+
 .nav-link.active{
     background-color:hsl(0 100% 0% / 0.1)!important;
     color:#17bdb8!important;
 }
 @media screen and (max-width:36em){
-    #nav{
-        padding-right:0!important;
-    }
+
     .nav-item{
         background-color:hsl(0 100% 0% / 0.4)!important
     }
