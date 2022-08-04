@@ -58,6 +58,10 @@
     padding:0 1em;
     margin-left:55%;
     background-color:rgb(21, 255, 0);
+    display:none;
+}
+#MobileCategory.active{
+    display:block;
 }
 #MobileCategory details{
     border-bottom:1px solid black;
@@ -67,6 +71,21 @@
     display:block;
     padding:0.5em 1em;
     border-bottom:1px solid limegreen;
+}
+#MobileCategory-dropdown{
+    position:absolute;
+    width:100%;
+    top:0;
+    right:0;
+    padding:1em 2em;
+    background-color:hsl(0 0% 100%/ 0.3);
+    backdrop-filter: blur(5px);
+}
+.menu{
+    position:absolute;
+    right:1em;
+    transform:scale(2);
+    z-index:10
 }
 #Category li{
     position:relative;
@@ -125,7 +144,8 @@
 }
 @media screen and (max-width: 44em){
     #Header{
-        flex-direction:column
+        flex-direction:column;
+        position:absolute;
     }
     #Category{
         margin:0 auto;

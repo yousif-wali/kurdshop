@@ -145,6 +145,12 @@ header .nav a{
     cursor:pointer;
     transform:translateY(-20px)
 }
+@media screen and (max-width:36em){
+    #menu{
+        position:relative;
+        inset:0 0 0 0 ;
+    }
+}
 header div{
     position: relative;
     width:max-content;

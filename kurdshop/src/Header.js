@@ -26,16 +26,16 @@ const requestHeader = e =>{
   }
 }
 }
-function Header() {
-  let bars = '≡'
-  let close = 'x';
- function menu(elem){
-  if(elem.target.innerHTML === bars)elem.target.innerHTML = close;
-  else elem.target.innerHTML = bars;
-  document.getElementById("nav").classList.toggle("active");
-  document.getElementById("navigation").classList.toggle("active");
+let bars = '≡'
+let close = 'x';
+export function menu(elem){
+ if(elem.target.innerHTML === bars)elem.target.innerHTML = close;
+ else elem.target.innerHTML = bars;
+ document.getElementById("nav").classList.toggle("active");
+ document.getElementById("navigation").classList.toggle("active");
 
- }
+}
+function Header() {
  function keepActiveClass(string){
   if(string === "Login"){
     return window.location.href.includes(string) || window.location.href.includes("Signup") ? "nav-link active": "nav-link"

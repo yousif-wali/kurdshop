@@ -3,7 +3,6 @@ import {useEffect, useState} from "react"
 import axios from '../api/axios';
 import Posts from "./../Data/ShopPosts"
 import { useAuth0 } from "@auth0/auth0-react";
-
 function Sublist(props){
    return categories[props.item].sublist.map((list, index)=>{
       return(
@@ -52,6 +51,15 @@ const requestHeader = e =>{
 }
 }
 export default function Shop(){
+  let bars = '≡'
+  let close = 'x';
+ function menu(elem){
+   if(elem.target.innerHTML === bars)elem.target.innerHTML = close;
+   else elem.target.innerHTML = bars;
+   document.getElementById("MobileCategory").classList.toggle("active");
+  // document.getElementById("navigation").classList.toggle("active");
+  
+  }
   const [posts, setPosts] = useState([])
   const { isAuthenticated } = useAuth0()
   useEffect(() => {
@@ -77,7 +85,9 @@ export default function Shop(){
            } </ul>
                  
           </section>
+
           <section id="MobileCategory" dir={document.documentElement.getAttribute("lan") === "kurd"? "ltr": "rtl"}>
+          <section id="MobileCategory-dropdown">
           {
              categories.map((res, index)=>{
             return (
@@ -91,7 +101,7 @@ export default function Shop(){
            
              )
             })
-           }
+           }</section>
           </section>
           <section id="Post">
             {
@@ -101,6 +111,7 @@ export default function Shop(){
         </section>
         <section id="Main">
           <section id="Posts">
+          <span className="menu" onClick={menu}>{bars}</span>
             <Posts  saleposts={posts}/>
           </section>
           <section id="Promotions">
