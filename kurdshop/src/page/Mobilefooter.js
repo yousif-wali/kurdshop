@@ -8,7 +8,7 @@ export default function MobileFooter(){
         <button onClick={(e)=>{e.preventDefault();window.location="/page/Post"}}>کاڵاکەت دانە</button>
             </section>
             <section>
-                <button onClick={(e)=>{e.preventDefault();window.location="/"}}>ماڵەوە</button>
+                <button onClick={(e)=>{e.preventDefault();window.location="/"}}>سەرەکی</button>
             </section>
         </footer>
     )

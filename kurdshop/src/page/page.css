@@ -54,10 +54,10 @@
     }
 }
 #MobileCategory{
-    width:95%;
+    width:40%;
     padding:0 1em;
-    background-image:radial-gradient(circle, green, darkorange);
-    margin:0 auto;  
+    margin-left:55%;
+    background-color:rgb(21, 255, 0);
 }
 #MobileCategory details{
     border-bottom:1px solid black;
@@ -65,8 +65,8 @@
 }
 #MobileCategory details summary ~ *{
     display:block;
-    background-color:purple;
     padding:0.5em 1em;
+    border-bottom:1px solid limegreen;
 }
 #Category li{
     position:relative;
